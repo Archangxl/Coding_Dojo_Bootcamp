@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>View {{ recipes.recipe_name }}</title>
+</head>
+<body>
+    <header class="row m-4 mb-3">
+
+        <div class="col d-flex align-items-center">
+            <h3>Welcome, {{ user.first_name }}</h3>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <a class="mx-5" href="/back/dashboard">back to recipes</a>
+            <a href="/logout">logout</a>
+        </div>
+
+    </header>
+
+    <main class="col mx-5">
+
+        <div class="row mb-3">
+            <div class="col">
+                <h3>{{ recipes.recipe_name }}</h3>
+            </div>
+            <div class="col">
+                <h4>Posted by {{ recipes.author.first_name }}</h4>
+            </div>
+        </div>
+
+        <div class="col mx-3 border border-dark py-4">
+
+            <div class="row mb-3">
+                <div class="col d-flex">
+                    <p class="mx-5">Description:</p>
+                    <p class="mx-5">{{ recipes.description }}</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col d-flex">
+                    <p class="mx-5">Under 30 minutes?</p>
+                    <p>{{ recipes.under_30_minutes }}</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col d-flex">
+                    <p class="mx-5">Instructions:</p>
+                    <p class="mx-5">{{ recipes.instruction }}</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col d-flex">
+                    <p class="mx-5">Date Made:</p>
+                    <p class="mx-5">{{ recipes.created_at.strftime("%B %d %Y") }}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+</html>

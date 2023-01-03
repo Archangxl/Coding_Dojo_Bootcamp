@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Great Number Game</title>
+</head>
+<body class="m-5">
+    
+    <header class="d-flex flex-column align-items-center m-2">
+    {% for classes in range(0,4) %}
+        {% if classes == 1 %}
+            <h1 class="">Welcome to the Great Number Game!</h1>
+        {% elif classes == 2 %}
+            <p class="">I am thinking of a number between 1 and 100</p>
+        {% elif classes == 3 %}
+            <p class="">Take a Guess!</p>
+        {% endif %}
+    {% endfor %}
+    </header>
+
+    <main class="">
+        <form action='/random' method="post" class="d-flex flex-column align-items-center">
+        {% for classes in range(0,3) %}
+            {% if classes == 1 %}
+                <input type="text" name="guess">
+            {% elif classes == 2 %}
+                <button class="m-2" value="submit" type="submit">Submit</button>
+            {% endif %}
+        {% endfor %}
+        </form>
+        <form action="/clear" class="d-flex flex-column align-items-center m-2">
+            <button class="" value="clear" type="clear">Reset</button>
+        </form>
+        <div class="d-flex flex-column align-items-center m-2">
+        {% if 'attempts', 'randomNum' in session: %}
+            {% if  6 > session['attempts'] %}
+                {% if 'guess' in session: %}
+                    {% if session['guess'] == session['randomNum'] %}
+                        <p>You did it!</p>
+                        <p>It took you {{attempts}} attempts!</p>
+                    {% elif session['guess'] > session['randomNum'] %}
+                        <p class="p-5 bg-danger">You were {{ session['guess'] - session['randomNum'] }} away from guessing correctly! Too high!</p>
+                        <p>Attempts: {{ session['attempts']}}</p>
+                        <p> Random number: {{session['randomNum']}}</p>
+                    {% elif session['randomNum'] > session['guess'] %}
+                        <p class="p-5 bg-danger">You were {{ session['randomNum'] - session['guess'] }} away from guessing correctly! Too low!</p>
+                        <p>Attempts: {{ session['attempts']}}</p>
+                        <p> Random number: {{session['randomNum']}}</p>
+                    {% endif %}
+                {% endif %}
+            {% elif session['attempts'] > 5: %}
+                <h1>You fail!</h1>
+            {% endif %}
+        {% endif %}
+        </div>
+    </main>
+</body>
+</html>

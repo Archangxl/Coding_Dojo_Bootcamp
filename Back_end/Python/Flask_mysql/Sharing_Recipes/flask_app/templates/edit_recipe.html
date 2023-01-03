@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <header class="row justify-content-between mb-3">
+
+            <div class="col-6">
+                <h2>Edit Recipe!</h2>
+            </div>
+            <div class="col-6">
+                <a class="mx-5" href="/back/dashboard">back to recipes</a>
+                <a href="/logout">logout</a>
+            </div>
+
+        </header>
+    </div>
+
+    <main class="container">
+
+        <form class="row" action="/edit/recipe" method="post">
+            <div class="row">
+            {% with messages = get_flashed_messages(category_filter = ['addNewRecipe']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="text-danger">{{message}}</p>   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            </div>
+            <div class="row">
+
+                <div class="col-7">
+
+                    <div class="row mb-4">
+                        <label class="col-3" for="recipe_name">Name:</label>
+                        <input value="{{recipes.recipe_name}}" class="col-8 rounded-2" type="text" name="recipe_name">
+                    </div>
+
+                    <div class="row">
+                        <label class="col-3" for="description">Description:</label>
+                        <textarea rows="3" class="col-8 rounded-2" type="text" name="description">{{recipes.description}}</textarea>
+                    </div>
+    
+                    <div class="row my-4">
+                        <label class="col-3" for="instruction">Instructions:</label>
+                        <textarea rows="3" class="col-8 rounded-2" type="text" name="instruction">{{ recipes.instruction }}</textarea>
+                    </div>
+    
+                </div>
+
+                <div class="col-5">
+                    <div class="row mt-4">
+                        <label for="created_at">Date Cooked/Made:</label>
+                    </div>
+                        <input value="{{ recipes.created_at }}" class="rounded-2" type="date" name="created_at">
+
+                    <label class="mt-5 row" style="padding-left: 12px;">Under 30 minutes?</label>
+                    <div class="row from-check mt-2" style="padding-left: 12px;">
+                        {% if recipes.under_30_minutes != yes %}
+                        <input class="col-1 form-check-input" type="radio" name="under_30_minutes" value="yes">
+                        <label class="col-2 form-check-label" for="under_30_minutes" >Yes</label>
+                        <input class="col-1 form-check-input" type="radio" name="under_30_minutes" value="no" checked>
+                        <label class="col-2 form-check-label" for="under_30_minutes">No</label>
+                        {% else %}
+                        <input class="col-1 form-check-input" type="radio" name="under_30_minutes" value="yes" checked>
+                        <label class="col-2 form-check-label" for="under_30_minutes" >Yes</label>
+                        <input class="col-1 form-check-input" type="radio" name="under_30_minutes" value="no">
+                        <label class="col-2 form-check-label" for="under_30_minutes">No</label>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="row justify-content-end"> 
+                    <div class="col-5">
+                        <button class="btn border border-dark ">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </main>
+</body>
+</html>

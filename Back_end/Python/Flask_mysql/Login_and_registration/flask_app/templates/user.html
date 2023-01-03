@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Welcome</title>
+</head>
+<body>
+    <nav class="row m-2 border-bottom border-dark">
+
+        <div class="col d-flex justify-content-end">
+            <h4 class="flex-fill">Coding Dojo Wall</h4>
+            <h4 class="mx-5">Welcome, {{user.first_name}}</h4>
+            <form action="/logout">
+                <button class="mb-2 btn bg bg-primary text-light">Log Out</button>
+            </form>
+        </div>
+
+    </nav>
+
+    <header class=" row m-2">
+
+        <div class="row m-2 border-bottom border-dark">
+
+            <form class="col flex-fill d-flex justify-content-center flex-column" action="/post/create" method="post">
+
+                <label class="my-2" for="post">What's on your mind? Create a new post:</label>
+                <textarea name="post" rows="2" class="mb-3"></textarea>
+                <div class="d-flex justify-content-end">
+                    <button class="mb-2 btn bg bg-primary text-light">Publish</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </header>
+
+    <main class="row mx-2">
+
+        <div class="row">
+            <h4 class="col d-flex align-items-center">All Community Posts</h4>
+        </div>
+        {% for post in posts %}
+        <form class="m-2 row d-flex justify-content-center flex-fill border border-dark" action="/delete/post" method="post">
+            <h6 class="col">{{ post.author.first_name }} - {{ post.created_at.strftime("%B %d %Y %T") }}</h6>
+            <div class="row d-flex align-items-center">
+                <p class="col">{{ post.content }}</p>
+            {% if post.author.id == session.id %}
+                <div class="col d-flex justify-content-end">
+                    <input type="hidden" value="{{ post.id }}" name="post_id">
+                    <button class="mb-2 btn bg bg-primary text-light">Delete</button>
+                </div>
+            {% endif %}
+            </div>
+        </form>
+        {% endfor %}
+
+    </main>
+</body>
+</html>
