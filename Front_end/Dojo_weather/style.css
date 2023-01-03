@@ -1,0 +1,158 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+/* Nav bar */
+
+
+nav {
+    display: flex;
+    padding: 10px 150px;
+    background-color: #9fc5f8;
+    color: white;
+}
+.nav-left, .nav-right {
+    flex: 1;
+    margin: 0px 10px 0px 10px;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+.city {
+    padding: 0px 50px 0px 0px;
+    font-size: 25px;
+    display: flex;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Header */
+
+
+header {
+    padding: 10px 150px;
+}
+.header {
+    display: flex;
+    border-bottom: black 3px solid;
+    font-weight: 500;
+    padding: 0px 0px 10px 0px;
+    margin: 0px 10px 0px 10px;
+}
+.header-left, .header-right {
+    flex: 1;
+}
+.header-left {
+    font-size: 25px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header-content {
+    padding: 0px 20px 0px 0px;
+}
+
+
+/* Main */
+
+
+main {
+    padding: 10px 150px;
+}
+.main {
+    display: flex;
+    background-color: white;;
+    font-weight: 500;
+    justify-content: space-around;
+}
+.day-pannel {
+    flex: 1;
+    background-color: #eeeeee;
+    margin: 10px 5px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    border-radius: 5px;
+}
+
+
+.pannel-title {
+    padding: 10px 0px 0px 0px;
+    font-size: 25px;
+}
+.weather-img {
+    display: flex;
+    padding: 15px 0px 20px 0px;
+}
+.w-img {
+    height: 200px;
+    border-radius: 50%;
+}
+.pannel-description {
+    font-size: 25px;
+    padding: 10px 0px 0px 0px;
+}
+
+
+.pannel-footer {
+    display: flex;
+    padding: 10px 0px 20px 0px;
+}
+.red, .blue {
+    flex: 1;
+    display: flex;
+    font-weight: 900;
+    font-size: 20px;
+}
+.red {
+    color: #d02f2cfe;
+    padding: 0px 50px 0px 0px;
+}
+.blue {
+    color: #478ae6fe;
+}
+
+
+/* Footer */
+
+
+footer {
+    padding: 0px 150px;
+}
+.cookie-alert {
+    border: black solid;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    margin: 0px 155px 0px 10px;
+    position: fixed;
+}
+.cookie {
+    height: 50px;
+    padding: 0px 30px 0px 15px;
+}
+.cookie-content {
+    font-weight: 500;
+    font-size: 20px;
+    padding: 0px 10px 0px 0px;
+}
+.cookie-button {
+    background-color: #98bdee;
+    font-weight: 600; 
+    padding: 8px;
+    box-shadow: 3px 4px;
+    border: solid 3px black;
+    font-size: 20px;
+}

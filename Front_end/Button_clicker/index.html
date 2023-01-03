@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+        <meta charset="UTF-8">
+        <title>Dojonary</title>
+    </head>
+    <body>
+        <div class="page">
+            <div class="head">
+                <div class="fill"></div>
+                    <div class="header">
+                        <h1>Dojonary</h1>
+                        <div class="searchBar">
+                            <input type="text" name="search" placeholder="Search">
+                        </div>
+                        <div class="logout">
+                            <button onclick="logOut(this)">Login</button>
+                        </div>
+                    </div>
+                <div class="fill"></div>
+            </div>
+            <div class="body">
+                <div class="filler"></div>
+                <div class="main">
+                    <div class="definition-column">
+                        <div class="definition-box">
+                            <div class="word">
+                                <p><strong>ninja</strong></p>
+                                <p><em>noun</em></p>
+                                <p class="space">Plural: <em>ninjas</em></p>
+                                <button onclick="liked()">13 likes</button>
+                            </div>
+                            <div class="definition">
+                                <p>A practitioner skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></p>
+                            </div>
+                        </div>
+                        <div class="definition-box">
+                            <div class="word">
+                                <p><strong>ninja</strong></p>
+                                <p><em>noun</em></p>
+                                <p class="space">Plural: <em>ninjas</em></p>
+                                <button onclick="liked()">37 likes</button>
+                            </div>
+                            <div class="definition">
+                                <p>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author-column">
+                        <div class="add">
+                            <p class="space">Dojonary is defined by <strong>YOU</strong></p>
+                            <button onclick="removeMe(this)">Add Definition</button>
+                        </div>
+                        <div class="filler"></div>
+                    </div>
+                </div>
+                <div class="filler"></div>
+            </div>
+        </div>
+    </body>
+</html>

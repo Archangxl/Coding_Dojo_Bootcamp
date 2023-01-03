@@ -1,0 +1,264 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+div.page {
+    display: flex;
+    flex-flow: column;
+}
+
+/* Header Styling */
+
+div.header {
+    display: flex;
+    background-color: black;
+    flex: 1;
+    padding: 10px 10px;
+}
+.main-header {
+    display: flex;
+    flex: 3;
+    justify-content: flex-start;
+}
+.header-text, .header-profile, .header-my-profile {
+    color: white;
+}
+.header-profile {
+    padding: 2px 50px 0px 0px;
+}
+.header-text {
+    padding: 11px 50px 0px 5px; 
+}
+.header-my-profile {
+    padding: 7px 50px 0px 0px;
+}
+.sign-out {
+    display: flex;
+    background-color: black;
+    flex: 2;
+    justify-content: flex-end;
+    margin: 0px 0px 0px 10px;
+}
+input {
+    background-color: rgb(52, 189, 234);
+    color: white;
+    padding: 0px 5px;
+}
+.filler {
+    display: flex;
+    background-color: black;
+    flex: 1;
+}
+
+/* Body styling */
+
+
+div.body {
+    display: flex;
+    background-color: white;
+    padding: 50px 10px 0px 10px;
+    flex: 1;
+}
+.body-filler {
+    display: flex;
+    background-color: white;
+    flex: 1;
+}
+
+/*left side of page*/
+
+.body-left {
+    display: flex;
+    flex: 3;
+    flex-flow: column;
+    height: 760px;
+}
+
+/* Card */
+
+.card {
+    display: flex;
+    flex: 3;
+    flex-flow: column;
+    border: lightgray solid 2px;
+    margin: 0px 25px 50px 0px;
+    box-shadow: lightgray 3px 3px;
+}
+.card-top {
+    display: flex;
+    flex: 2;
+    background-color: rgb(52, 189, 234);
+}
+#main-profile {
+    height: 125px;
+    position: absolute;
+    display: flex;
+    padding: 65px 0px 0px 55px;
+}
+#main-profile img{
+    display: flex;
+    border-radius: 50%;
+    border: 5px solid rgb(255, 255, 255);
+}
+
+.card-bottom {
+    display: flex;
+    flex: 4;
+    flex-flow: column;
+    padding: 0px 0px 0px 55px;
+}
+.card-bottom h1 {
+    padding: 55px 0px 0px 0px; 
+}
+
+#location {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 0px
+}
+#location img {
+    height: 20px;
+}
+#location h2 {
+    padding: 0px 0px 0px 8px;
+}
+
+#edit-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 0px 0px;
+}
+#edit-profile a {
+    color: blue;
+}
+#edit-profile img {
+    height: 20px;
+    padding: 0px 8px 0px 0px;
+}
+/* Education */
+
+.education {
+    display: flex;
+    flex: 2;
+    flex-flow: column;
+    box-shadow: lightgray 3px 3px;
+    border: lightgray solid 2px;
+    margin: 0px 25px 0px 0px;
+}
+#edu-head {
+    display: flex;
+    flex: 1;
+    background-color: black;
+    color: white;
+    padding: 0px 0px 0px 55px;
+    align-items: center;
+}
+#edu-body {
+    display: flex;
+    flex: 3;
+    padding: 10px 0px 0px 55px;
+    flex-flow: column;
+    align-items: flex-start;
+}
+h4.dates {
+    color: rgb(150, 150, 150);
+    padding: 10px 0px 10px 0px;
+}
+/*right side of page*/
+
+.body-right {
+    display: flex;
+    flex: 2;
+    flex-flow: column;
+    margin: 0px 0px 0px 10px;
+}
+.connection-requests {
+    display: flex;
+    flex: 2;
+    flex-flow: column;
+    box-shadow: lightgray 3px 3px;
+    margin: 0px 0px 50px 0px;
+    border: lightgray solid 2px;
+}
+.cr-head, .yr-head {
+    display: flex;
+    flex: 1;
+    background-color: black;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 0px 0px 30px;
+}
+.cr-head {
+    flex: 3;
+}
+.number {
+    display: flex;
+    background-color: rgb(182, 181, 181);
+    border-radius: 50%;
+    padding: 0px 10px 0px 10px;
+    color: black;
+}
+.cr-title, .yr-title {
+    padding: 0px 0px 0px 10px;
+}
+.cr-body, .yr-body {
+    padding: 10px 0px 0px 10px;
+    flex-flow: column;
+}
+.yr-body {
+    flex: 4;
+}
+.cr-body {
+    flex: 7;
+}
+.yr-body {
+    flex-flow: column;
+    align-items: flex-start;
+}
+.request {
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    flex: 1;
+}
+.friend-picture {
+    display: flex;
+    padding: 10px 0px 10px 15px;
+    align-items: center;
+}
+.friend-picture img, .decision img {
+    display: flex; 
+    border-radius: 50%;
+    height: 50px;
+}
+.decision {
+    display: flex;
+    padding: 10px 10px 10px 15px;
+    align-items: center;
+}
+.button-spacing {
+    padding: 0px 10px 0px 0px;
+}
+.friend-picture h2 {
+    padding: 0px 0px 0px 10px;
+}
+.your-connections {
+    display: flex;
+    flex: 4;
+    flex-flow: column;
+    box-shadow: lightgray 3px 3px;
+    border: lightgray solid 2px;
+}
+.yr-bottom {
+    display: flex;
+    flex: 1;
+    border: 2px solid lightgray;
+    align-items: center;
+}
+.yr-bottom h2 {
+    padding: 0px 0px 0px 25px;
+}
+.yr-bottom a {
+    color: blue;
+}

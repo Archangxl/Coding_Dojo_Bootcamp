@@ -1,0 +1,117 @@
+.page {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* head */
+
+.head {
+    display: flex;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    flex: 4;
+}
+.fill, .header h1 {
+    flex: 1;
+}
+.header h1 {
+    padding: 0px 0px 0px 10px;
+}
+.searchBar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+.searchBar input {
+    flex: 1;
+    border: black 3px solid;
+}
+.logout {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 10px 0px 0px;
+}
+.logout button {
+    background-color: rgb(20, 122, 217);
+    color: white;
+    box-shadow: black 3px 3px;
+    padding: 5px 5px;
+}
+
+/* Body */
+
+.body {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+}
+.main {
+    display: flex;
+    flex: 4;
+}
+.filler {
+    flex: 1;
+}
+.definition-column {
+    display: flex;
+    flex: 3;
+    flex-flow: column;
+}
+.definition-box {
+    display: flex;
+    border: black 2px solid;
+    margin: 0px 0px 20px 0px;
+}
+.word {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    align-items: center;
+    padding: 15px 0px 10px 0px;
+    margin: 0px;
+}
+.word strong {
+    font-size: 25px;
+    flex: 1;
+}
+p {
+    margin: 0px;
+}
+.space {
+    margin: 0px 0px 20px 0px;
+}
+.definition {
+    display: flex;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.definition-box button {
+    background-color: rgb(250, 219, 95);
+    box-shadow: black 3px 3px;
+    padding: 10px 20px;
+    margin: 0px;
+}
+.author-column {
+    display: flex;
+    flex: 1;
+    flex-flow: column;
+    margin: 0px 0px 0px 20px;
+}
+.add {
+    display: flex;
+    border: black 2px solid;
+    flex-flow: column;
+    padding: 15px 10px 10px 10px;
+}
+.add button {
+    background-color: rgb(79, 206, 79);
+    padding: 5px 0px;
+    box-shadow: black 3px 3px;
+}

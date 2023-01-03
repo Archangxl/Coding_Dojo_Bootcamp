@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" type="text/css" href="style.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!--Nav Bar at the top of the page-->
+
+    <nav>
+        <div class="nav-left">
+            <h2 class="title">DojoWeather</h2>
+        </div>
+        <ul class="nav-right">
+            <li class="city" onclick="cityAlert(this)"><a href="#">Burbank</a></li>
+            <li class="city" onclick="cityAlert(this)"><a href="#">Chicago</a></li>
+            <li class="city" onclick="cityAlert(this)"><a href="#">Dallas</a></li>
+        </ul>
+    </nav>
+
+    <!--Header: City and temparture adjust-->
+
+    <header>
+        <div class="header">
+            <div class="header-left">
+                <p>San Jose</p>
+            </div>
+            <div class="header-right">
+                <p class="header-content">show temperature in</p>
+                <select class="header-content" onchange="changeTemp(this)">
+                    <option>°C</option>
+                    <option>°F</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!--Main section: Displays the weather for each day of the week-->
+
+    <main>
+        <div class="main">
+            <div class="day-pannel">
+                <p class="pannel-title">Today</p>
+                <div class="weather-img">
+                    <img class="w-img" src="assets/some_rain.png" alt="some rain">
+                </div>
+                <p class="pannel-description">some rain</p>
+                <div class="pannel-footer">
+                    <p class="red"><span id="today-1">24</span>°</p>
+                    <p class="blue"><span id="today-2">18</span>°</p>
+                </div>
+            </div>
+            <div class="day-pannel">
+                <p class="pannel-title">Tomorrow</p>
+                <div class="weather-img">
+                    <img class="w-img" src="assets/some_sun.png" alt="some sun">
+                </div>
+                <p class="pannel-description">some sun</p>
+                <div class="pannel-footer">
+                    <p class="red"><span id="tomorrow-1">27</span>°</p>
+                    <p class="blue"><span id="tomorrow-2">19</span>°</p>
+                </div>
+            </div>
+            <div class="day-pannel">
+                <p class="pannel-title">Friday</p>
+                <div class="weather-img">
+                    <img class="w-img" src="assets/some_clouds.png" alt="some clouds">
+                </div>
+                <p class="pannel-description">some clouds</p>
+                <div class="pannel-footer">
+                    <p class="red"><span id="friday-1">21</span>°</p>
+                    <p class="blue"><span id="friday-2">16</span>°</p>
+                </div>
+            </div>
+            <div class="day-pannel">
+                <p class="pannel-title">Saturday</p>
+                <div class="weather-img">
+                    <img class="w-img" src="assets/some_sun.png" alt="some sun">
+                </div>
+                <p class="pannel-description">some sun</p>
+                <div class="pannel-footer">
+                    <p class="red"><span id="saturday-1">26</span>°</p>
+                    <p class="blue"><span id="saturday-2">21</span>°</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--Footer: Cookie Alert at the bottom of the page-->
+
+    <footer>
+        <div class="cookie-alert">
+            <div class="cookie-img">
+                <img class="cookie" src="assets/cookie.png" alt="cookie">
+            </div>
+            <div class="cookie-content">
+                <h1>Stop! Cookie time</h1>
+            <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <a href="#">Read more...</a></p>
+            </div>
+            <div class="cookie-decision">
+                <input type="submit" name="I-accept" value="I Accept" class="cookie-button" onclick="remove(this)">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

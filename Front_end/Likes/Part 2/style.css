@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.page {
+    padding: 0px 200px;
+}
+
+/* header */
+
+.header-one {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.header-two {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+/*body contents*/
+
+.body-contents {
+    display: flex;
+}   
+.left {
+    flex: 1;
+    padding: 10px 0px 0px 0px;
+}
+.account {
+    display: flex;
+    border: 3px black solid;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+.account-content {
+    padding: 10px 0px 10px 0px;
+}
+.image {
+    display: flex;
+    padding: 25px;
+}
+img {
+    height: 65px;
+}
+.right {
+    flex: 3;
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    padding: 10px 0px 0px 10px;
+}
+.post {
+    display: flex;
+    border: 3px solid black;
+    flex-flow: column;
+    padding: 20px 10px 20px 10px;
+    margin: 0px 0px 10px 0px;
+}
+.name {
+    display: flex;
+    flex: 1;
+    padding: 0px 0px 10px 0px;
+    align-items: center;
+}
+div.content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    padding: 0px 10px 0px 0px;
+}
+.name button {
+    background-color: rgb(244, 224, 68);
+    padding: 5px;
+    box-shadow: 3px 3px black;
+}
+.content {
+    flex: 1;
+}
+p.content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.description {
+    flex: 1;
+}

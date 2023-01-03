@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Flex Navbar</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: Roboto;
+            }
+            .nav {
+                display: flex;
+                margin: 0px auto;
+                align-items: center;
+                justify-content: space-between;
+                background-color: gray;
+                width: 100%;
+                height: 50px;
+            }
+            h1.nav-title {
+                width: 100px;
+                color: white;
+                margin: 0px 0px 0px 20px;
+            }
+            .nav-links {
+                justify-content: end;
+                background-color: gray;
+                display: flex;
+            }
+            li {
+                margin: 0px 0px 0px 20px;
+                color: gray;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+            }
+            button {
+                background-color: turquoise;
+                box-shadow: 3px 3px black;
+                margin-right: 10px;
+                color: white;
+            }
+            .active {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav">
+            <h1 class="nav-title">Profile</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">My Profile</a></li>
+                <li><a href="#">Find Connections</a></li>
+                <li><button class="btn">Sign Out</button></li>
+            </ul>
+        </div>        
+    </body>
+</html>
