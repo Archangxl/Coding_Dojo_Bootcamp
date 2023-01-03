@@ -1,0 +1,25 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+.board {
+    display: flex;
+    flex-flow: column;
+}
+.row {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+.row-2 {
+    display: flex;
+    flex: 1;
+}
+.block {
+    flex: 1;
+    height: 50px;
+    width: 100px;
+}
+.block-2 {
+    flex: 1;
+}
