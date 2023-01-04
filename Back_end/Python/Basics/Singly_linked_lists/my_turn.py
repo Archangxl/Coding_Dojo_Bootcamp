@@ -1,46 +1,39 @@
 class Index:
+    def __init__(self, indexValue):
+        self.indexValue = indexValue
+        self.nextIndex = None
 
-    def __init__(self, index):
-        self.index = index
-        self.next_index = None
-
-class Make_List:
-
+class List:
     def __init__(self):
-        self.index_0 = None
+        self.index = None
 
-    def add_index_to_the_front_of_the_list(self, val):
-        index_getting_added = Index(val)
-        current_index_0 = self.index_0
-        index_getting_added.next_index = current_index_0
-        self.index_0 = index_getting_added
-
+    def printValues(self):
+        index = self.index
+        while(index != None):
+            print(index.indexValue)
+            index = index.nextIndex
         return self
 
-    def add_index_to_the_back_of_the_list(self, val):
+    def addIndexToFront(self, value):
+        new_index = Index(value)
+        current_index = self.index
+        new_index.nextIndex = current_index
+        self.index = new_index
+        return self
 
-        if self.index_0 == None:
-            self.add_index_to_the_front_of_the_list(val)
+    def addIndexToBack(self, value):
+        if self.index == None:
+            self.addIndexToFront(value)
             return self
-
-        index_getting_added = Index(val)
-        current_index_0 = self.index_0
-
-        while (current_index_0.next_index != None):
-            current_index_0.next_index = current_index_0.next_index
-        current_index_0 = index_getting_added
-
+        new_index = Index(value)
+        index = self.index
+        while(index.nextIndex != None):
+            index = index.nextIndex
+        index.nextIndex = new_index
         return self
 
-    def print_list(self):
-        index_zero = self.index_0
-        while (index_zero.next_index != None):
-            print(index_zero.value)
-            index_zero = index_zero.next_index
-        return self
-
-list = Make_List()
-list.add_index_to_the_back_of_the_list("hello").print_list()
+list = List()
+list.addIndexToFront("World").addIndexToFront("Hello").addIndexToBack("!").printValues()
 
 
 
