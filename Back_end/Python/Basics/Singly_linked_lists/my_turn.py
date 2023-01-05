@@ -49,9 +49,23 @@ class List:
             index.nextIndex = None
             return self
 
+    def removeIndex(self, val):
+        index = self.index
+        if index == None:
+            return self
+        else:
+            while index != None:
+                if index.nextIndex.indexValue == val:
+                    index.nextIndex = None
+                    return self
+                else:
+                    print(2)
+                    index = index.nextIndex
+            return self
+
 
 list = List()
-list.addIndexToFront("World").addIndexToFront("Hello").addIndexToBack("!").removeIndexFront().removeIndexBack().printValues()
+list.addIndexToFront("/ Ken Block").addIndexToFront("World").addIndexToFront("Hello").addIndexToBack("!").removeIndexFront().removeIndexBack().removeIndex("/ Ken Block").printValues()
 
 
 
