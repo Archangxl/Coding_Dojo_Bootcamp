@@ -32,8 +32,26 @@ class List:
         index.nextIndex = new_index
         return self
 
+    def removeIndexFront(self):
+        self.index = self.index.nextIndex
+        return self
+
+    def removeIndexBack(self):
+        if self.index == None:
+            return self
+        elif self.index.nextIndex == None:
+            self.index = None
+            return self
+        else:
+            index = self.index
+            while index.nextIndex.nextIndex != None:
+                index = index.nextIndex
+            index.nextIndex = None
+            return self
+
+
 list = List()
-list.addIndexToFront("World").addIndexToFront("Hello").addIndexToBack("!").printValues()
+list.addIndexToFront("World").addIndexToFront("Hello").addIndexToBack("!").removeIndexFront().removeIndexBack().printValues()
 
 
 
