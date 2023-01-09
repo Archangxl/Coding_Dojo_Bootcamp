@@ -1,5 +1,3 @@
-package Back_end.Java.Basics.FirstJavaProgram;
-
 public class Program {
     public static void main(String[] args) {
         System.out.println("My Name is Alexander Mueller.");
