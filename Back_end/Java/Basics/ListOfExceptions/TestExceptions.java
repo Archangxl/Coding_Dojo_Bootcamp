@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Test {
+public class TestExceptions {
     public static void main(String[] args) {
         ArrayList<Object> myList = new ArrayList<Object>();
         myList.add("13");
