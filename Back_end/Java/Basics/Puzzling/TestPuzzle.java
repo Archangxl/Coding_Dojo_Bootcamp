@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.ArrayList;
 public class TestPuzzle {
 
@@ -11,6 +10,14 @@ public class TestPuzzle {
         String randomLetter = generator.getRandomLetter();
         System.out.println(randomLetter);
 
+        String randomPassword = generator.getRandomPassword();
+        System.out.println(randomPassword);
+
+        ArrayList<String> randomPasswordArray = generator.getRandomPasswordSet(2);
+        System.out.println(randomPasswordArray);
+
+        String[] array = {"a", "b", "c"};
+        ArrayList<String> shuffleArray = generator.shuffleArray(array);
+        System.out.println(shuffleArray);
     }
-    
 }
