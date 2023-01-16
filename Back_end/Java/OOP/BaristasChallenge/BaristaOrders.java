@@ -7,10 +7,12 @@ class BaristaOrders {
 
     public void setOrder() {
         this.name = "Guest";
+        this.items = new ArrayList<BaristaItems>();
     }
 
     public void setOrder(String name) {
         this.name = name;
+        this.items = new ArrayList<BaristaItems>();
     }
 
     public String getOrderName(){
@@ -25,11 +27,11 @@ class BaristaOrders {
         return this.items;
     }
 
-    public String getStatusMessage() {
+    public void getStatusMessage() {
         if (this.ready != true) {
-            return "Thank you for waiting, Your order will be ready soon!";
+            System.out.println("\nThank you for waiting, Your order will be ready soon!\n");
         } else {
-            return "Your order is ready!";
+            System.out.println("\nYour order is ready!\n");
         }
     }
 
@@ -43,12 +45,12 @@ class BaristaOrders {
     }
 
     public void getDisplay() {
-        System.out.printf("Customer Name: %s", this.name);
+        System.out.printf("\nCustomer Name: %s", this.name);
         for (int i = 0; i < items.size(); i++) {
             BaristaItems item = items.get(i);
-            System.out.printf(item.getName() + " - "+ item.getPrice());
+            System.out.printf("\n"+item.getName() + " - "+ item.getPrice());
         }
-        System.out.printf("Total: %s", getOrderTotal());
+        System.out.printf("\nTotal: %s", getOrderTotal() + "\n");
     }
 
     public void setOrderName(String name) {
