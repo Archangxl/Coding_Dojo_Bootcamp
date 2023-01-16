@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 class Orders {
     public String name;
     public double total;
