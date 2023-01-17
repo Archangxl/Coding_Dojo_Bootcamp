@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author lixom
+ *
+ */
+module CareSoftInterfaces {
+}
