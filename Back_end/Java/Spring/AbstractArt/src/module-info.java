@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author muellal
+ *
+ */
+module AbstractArt {
+}
