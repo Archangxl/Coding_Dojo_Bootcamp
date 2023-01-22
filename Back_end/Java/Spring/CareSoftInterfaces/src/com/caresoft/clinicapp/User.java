@@ -3,8 +3,9 @@ package com.caresoft.clinicapp;
 public class User {
     protected Integer id;
     protected int pin;
+
     public User(int id) {
-    	this.id = id;
+		this.id = id;
     }
 	public Integer getId() {
 		return id;

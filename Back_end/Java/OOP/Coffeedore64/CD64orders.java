@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
-class BaristaOrders {
+class CD64orders {
     private String name;
     private boolean ready;
     private ArrayList<CD64items> items;
-
-    public void setOrder() {
+    
+    public CD64orders() {
         this.name = "Guest";
         this.items = new ArrayList<CD64items>();
     }
 
-    public void setOrder(String name) {
+    public CD64orders(String name) {
         this.name = name;
         this.items = new ArrayList<CD64items>();
     }
@@ -37,18 +37,16 @@ class BaristaOrders {
 
     public double getOrderTotal() {
         double total = 0;
-        for (int i = 0; i < this.items.size(); i++) {
-            CD64items item = this.items.get(i);
+        for (CD64items item : items) {
             total += item.getPrice();
         }
         return total;
     }
 
-    public void getDisplay() {
+    public void Display() {
         System.out.printf("\nCustomer Name: %s", this.name);
-        for (int i = 0; i < items.size(); i++) {
-            CD64items item = items.get(i);
-            System.out.printf("\n%s %s -- $%.2f", item.getIndex(), item.getName(), item.getPrice());
+        for (CD64items item : items) {
+            System.out.printf("\n%d %s -- $%.2f", item.getIndex(), item.getName(), item.getPrice());
         }
         System.out.printf("\nTotal: $%.2f", getOrderTotal());
     }
