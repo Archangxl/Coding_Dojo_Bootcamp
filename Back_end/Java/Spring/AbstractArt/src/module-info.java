@@ -2,7 +2,7 @@
  * 
  */
 /**
- * @author muellal
+ * @author Alexander Mueller
  *
  */
 module AbstractArt {
