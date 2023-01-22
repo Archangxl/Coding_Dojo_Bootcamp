@@ -15,9 +15,9 @@ public class AdminUser extends User implements HIPAACompliantAdmin, HIPAAComplia
     // TO DO: Implement HIPAACompliantAdmin!
     
     public AdminUser(Integer id, String role) {
-    	super(id);
-    	this.role = role;
-    	this.securityIncidents = new ArrayList<String>();
+		super(id);
+		this.role = role;
+		this.securityIncidents = new ArrayList<String>();
     }
     
     public void newIncident(String notes) {
@@ -49,7 +49,7 @@ public class AdminUser extends User implements HIPAACompliantAdmin, HIPAAComplia
 			return true;
 		}
 		authIncident();
- 		return false;
+		return false;
 	}
 	@Override
 	public ArrayList<String> reportSecurityIncidents() {
