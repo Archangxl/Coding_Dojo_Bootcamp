@@ -4,11 +4,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<!-- for Bootstrap CSS -->
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<!-- YOUR own local CSS -->
+	<link rel="stylesheet" type="text/css" href="/CSS/style.css">
+	<!-- For any Bootstrap that uses JS or jQuery-->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="/JS/app.js"></script>
 </head>
 <body>
-	<h1>Hello from JSP</h1>
+	<h1 class="bg-dark text-light">Hello from JSP</h1>
 	
 	<% for (int i = 0; i < 5; i++) {%>
 		<h1><%= i %></h1>
