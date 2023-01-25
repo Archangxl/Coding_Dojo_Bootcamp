@@ -27,5 +27,11 @@
 	<h1>Two plus two is: </h1>
 	<h2><c:out value="${2+2}"/></h2>
 	<h3><c:out value="${dojoName}"/></h3>
+	
+	<h1>Dojo Locations</h1>
+    <c:forEach var="oneDojo" items="${dojosFromMyController}">
+        <p><c:out value="${oneDojo}"></c:out></p>
+    </c:forEach>
+    
 </body>
 </html>
