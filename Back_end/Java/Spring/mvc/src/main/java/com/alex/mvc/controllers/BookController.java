@@ -14,8 +14,15 @@ public class BookController {
 	@Autowired
 	BookService bookService;
 	
+	@GetMapping("/book")
+	public String allBooks(Model model) {
+		model.addAttribute("books", bookService.allBooks() );
+		
+		return "allBooks.jsp";
+	}
+	
 	@GetMapping("/book/{id}")
-	public String index(Model model, @PathVariable("id") Long bookID) {
+	public String singleBook(Model model, @PathVariable("id") Long bookID) {
 		model.addAttribute("book", bookService.findBook(bookID));
 		return "book.jsp";
 	}
