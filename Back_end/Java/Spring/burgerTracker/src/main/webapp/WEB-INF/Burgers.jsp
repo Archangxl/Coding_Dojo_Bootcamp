@@ -39,7 +39,7 @@
     	<tbody>
     		<c:forEach var="burger" items="${burgers}">
 				<tr>
-					<td><c:out value="${burger.burgerName}"></c:out></td>
+					<td><a href="/update/<c:out value="${burger.getId()}"/>"><c:out value="${burger.burgerName}"/></a></td>
 					<td><c:out value="${burger.restaurantName}"></c:out></td>
 					<td><c:out value="${burger.rating}"></c:out></td>
 					
