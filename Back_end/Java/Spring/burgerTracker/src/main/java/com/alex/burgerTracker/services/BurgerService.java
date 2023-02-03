@@ -36,4 +36,14 @@ public class BurgerService {
 	public Burger updateBurger(Burger burger) {
 		return burgerRepository.save(burger);
 	}
+	
+	public Burger deleteBurger(Long id) {
+		Optional<Burger> burger = burgerRepository.findById(id);
+		if (burger.isPresent()) {
+			burgerRepository.deleteById(id);
+		} else {
+			System.out.println("error");
+		}
+		return null;
+	}
 }

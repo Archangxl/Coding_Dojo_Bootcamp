@@ -33,6 +33,7 @@
     			<th>Burger Name</th>
     			<th>Restaurant Name</th>
     			<th>Rating</th>
+    			<th>Delete</th>
     		</tr>
     	</thead>
     	
@@ -42,7 +43,14 @@
 					<td><a href="/update/<c:out value="${burger.getId()}"/>"><c:out value="${burger.burgerName}"/></a></td>
 					<td><c:out value="${burger.restaurantName}"></c:out></td>
 					<td><c:out value="${burger.rating}"></c:out></td>
+					<td>
 					
+						<form action="/delete/<c:out value="${burger.getId()}"/>" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="submit" value="Delete">
+						</form>
+					
+					</td>
 				</tr>
    			</c:forEach>
     	</tbody>
