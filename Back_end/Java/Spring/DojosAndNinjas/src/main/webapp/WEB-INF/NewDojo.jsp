@@ -19,33 +19,24 @@
 	
 </head>
 <body>
-
 	<main class="container-fluid justify-content-center">
 		<h1>New Dojo</h1>
 		
 	    <form:form class="form p-4" action="/create/dojo" method="post" modelAttribute="dojo">
-	    
-	    	<div class="row">
+	    	<div class="row mb-2">
 	    		<form:errors class="text-danger" path="name"/>
 	    	</div>
-	    	
 	 		<div class="row">
-	 			
 	 			<div class="col-auto">
-	 				<div class="mb-3">
-						<label><form:label class="col-form-label" path="name">Name: </form:label></label>
-	 				</div>
+	 				<p><form:label class="col-form-label" path="name">Name: </form:label></p>
 	 			</div>
 	 			<div class="col-6">
-						<p><form:input class="form-control" path="name"/></p>
+					<p><form:input class="form-control" path="name"/></p>
 	 				<div class="d-flex justify-content-end">
 	 					<button class="btn border-dark">Create</button>
 	 				</div>
 	 			</div>
-	 			
 	 		</div>
-			
 		</form:form>
 	</main>
-
 </body>

@@ -22,38 +22,23 @@
 	<main class="container-fluid">
 		<h1>New Ninja</h1>
 	    <form:form class="form p-4" action="/create/ninja" method="post" modelAttribute="ninja">
-	    
-	    	<div class="row">
+	    	<div class="row mb-2">
 	    		<form:errors class="text-danger" path="dojo"/>
-	    	</div>
-	    	<div class="row">
 	    		<form:errors class="text-danger" path="firstName"/>
-	    	</div>
-	    	<div class="row">
 	    		<form:errors class="text-danger" path="lastName"/>
-	    	</div>
-	    	<div class="row">
 	    		<form:errors class="text-danger" path="age"/>
 	    	</div>
-	    	
 	 		<div class="row">
 	 			
 	 			<div class="col-auto">
-	 				<div class="mb-3">
-						<label><form:label class="col-form-label" path="dojo">Dojo: </form:label></label>
-	 				</div>
-	 				<div class="mb-3">
-						<label><form:label class="col-form-label" path="firstName">First Name: </form:label></label>
-	 				</div>
-	 				<div class="mb-3">
-						<label><form:label class="col-form-label" path="lastName">Last Name: </form:label></label>
-	 				</div>
-	 				<div class="mb-3">
-						<label><form:label class="col-form-label" path="age">Age: </form:label></label>
-	 				</div>
+					<p><form:label class="col-form-label" path="dojo">Dojo: </form:label></p>
+					<p><form:label class="col-form-label" path="firstName">First Name: </form:label></p>
+					<p><form:label class="col-form-label" path="lastName">Last Name: </form:label></p>
+					<p><form:label class="col-form-label" path="age">Age: </form:label></p>
 	 			</div>
 	 			<div class="col-6">
-						<p><form:select path="dojo">
+						<p><form:select path="dojo" class="form-select">
+							<option value=""></option>
 							<c:forEach var="dojo" items="${dojos}">
 								<option value="<c:out value="${dojo.id}" />"><c:out value="${dojo.name}" /></option>	
 							</c:forEach>

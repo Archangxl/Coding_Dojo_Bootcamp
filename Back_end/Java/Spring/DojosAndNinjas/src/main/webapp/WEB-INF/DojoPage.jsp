@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title></title>
+	<title>Dojo Page</title>
 	<!-- for Bootstrap CSS -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<!-- YOUR own local CSS -->
@@ -19,32 +19,29 @@
 	
 </head>
 <body>
-	
-	<main>
-		<h1></h1>
-		
-		<table class="table table-bordered table-striped">
-		
-			<thead>
-				<tr>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Age</th>
-				</tr>
-			</thead>
-			<tbody class="table-group-divider">
-				<c:forEach var="dojo" items="${dojos}">
+	<main class="container-fluid">
+		<div class="container-fluid d-flex justify-content-center">
+			<h1><c:out value="${dojo.name}" /></h1>
+		</div>
+		<div>
+			<table class="table table-bordered table-striped">
+				<thead>
 					<tr>
-						<td><c:out value="dojo.ninjas.firstName" /></td>
-						<td><c:out value="dojo.ninjas.lastName" /></td>
-						<td><c:out value="dojo.ninjas.age" /></td>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Age</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-			
-		
-		</table>
-		
+				</thead>
+				<tbody class="table-group-divider">
+					<c:forEach var="ninja" items="${dojo.ninjas}">
+						<tr>
+							<td><c:out value="${ninja.firstName}" /></td>
+							<td><c:out value="${ninja.lastName}" /></td>
+							<td><c:out value="${ninja.age}" /></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
 	</main>
-
 </body>
