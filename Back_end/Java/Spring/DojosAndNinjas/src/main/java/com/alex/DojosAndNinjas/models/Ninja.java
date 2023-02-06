@@ -36,7 +36,7 @@ public class Ninja {
 	private String lastName;
 	
 	@NotNull
-	@Min(1)
+	@Min(value = 1, message = "Age must be older than 0 years old!")
 	private int age;
 	
 	@Column(updatable=false)
