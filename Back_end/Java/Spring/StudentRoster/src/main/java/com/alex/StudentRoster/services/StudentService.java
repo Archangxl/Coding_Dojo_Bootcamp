@@ -1,5 +1,6 @@
 package com.alex.StudentRoster.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -36,5 +37,9 @@ public class StudentService {
 			System.out.println("Error");
 		}
 		return null;
+	}
+	
+	public List<Student> allStudents() {
+		return sR.findAll();
 	}
 }

@@ -20,16 +20,20 @@
 </head>
 <body class="m-5">
 	
-	<header class="container-fluid d-flex justify-content center">
-		<h1>Dorms</h1>
+	<header class="row container-fluid">
+		<div class="d-flex justify-content-center">
+			<h1>Dorms</h1>
+		</div>
 	</header>
 	
-	<main class="container-fluid">
-		<p><a href="/dorms/new">Add a new dorm</a></p>
-		<p><a href="/students/new">Add a new student</a></p>
+	<main class="row container-fluid">
+		<div>
+			<p><a href="/dorms/new">Add a new dorm</a></p>
+			<p><a href="/students/new">Add a new student</a></p>
+		</div>
 
-		<div class="container-fluid">
-			<table class="table table-bordered table-striped">
+		<div class="container-fluid row">
+			<table class="table col-12 container-fluid table-bordered table-striped">
 				<thead>
 					<tr>
 						<th>Dorm</th>
@@ -39,7 +43,7 @@
 				<tbody class="table-group-divider">
 					<c:forEach var="dorm" items="${dorms}">
 						<tr>
-							<td><c:out value="${dorm.name}" /></td>
+							<td><c:out value="${dorm.dormName}" /></td>
 							<td><a href="/dorms/<c:out value="${dorm.id}" />">See Students</a></td>
 						</tr>
 					</c:forEach>

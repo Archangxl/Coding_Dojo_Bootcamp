@@ -6,11 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alex.StudentRoster.models.Dorm;
 import com.alex.StudentRoster.models.Student;
@@ -34,13 +35,13 @@ public class MainController {
 		return "formDorm.jsp";
 	}
 	@GetMapping("/dorms/{id}")
-	public String showDorm(Model model, @PathVariable("id") Long id, @ModelAttribute("dorm") Dorm dorm ) {
-		Dorm findDorm = dormS.findDorm(id);
-		model.addAttribute("dorm", findDorm);
+	public String showDorm(Model model, @PathVariable("id") Long id, @ModelAttribute("student") Student student ) {
+		model.addAttribute("dorm", dormS.findDorm(id));
+		model.addAttribute("students", studentS.allStudents());
 		return "showDorm.jsp";
 	}
 	@GetMapping("/students/new")
-	public String showFormStudent(Model model, @ModelAttribute("dorm")Dorm dorm) {
+	public String showFormStudent(Model model, @ModelAttribute("student")Student student) {
 		model.addAttribute("dorm", dormS.allDorms());
 		return "formStudent.jsp";
 	}
@@ -55,25 +56,26 @@ public class MainController {
 			return "redirect:/dorms";
 		}
 	}
-	@PutMapping("/students/update/{id}")
-	public String updateStudentDorm(@ModelAttribute("student")Student student, Model model, @PathVariable("id") Long id) {
-		Student findStudent = studentS.findStudent(id);
+	@PostMapping("/students/update/{id}")
+	public String updateStudentDorm(@ModelAttribute("student")Student student, Model model, @PathVariable("id") Long id, @RequestParam("id")Long studentID ) {
+		System.out.println(studentID);
+		Student findStudent = studentS.findStudent(studentID);
 		Dorm findDorm = findStudent.getDorm();
-		studentS.updateStudent(student);
-		return "redirect:/dorms/" + findDorm.getId();
+		findStudent.setDorm(findDorm);
+		studentS.updateStudent(findStudent);
+		return "redirect:/dorms/" + id;
 		
 	}
 	@PostMapping("/dorms/create")
 	public String createDorm(@Valid @ModelAttribute("dorm")Dorm dorm, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			model.addAttribute("dorm", dormS.allDorms());
 			return "formDorm.jsp";
 		} else {
 			dormS.createDorm(dorm);
 			return "redirect:/dorms";
 		}
 	}
-	@PostMapping("/students/delete/{id}")
+	@DeleteMapping("/students/delete/{id}")
 	public String deleteStudent(@PathVariable("id") Long id) {
 		Student findStudent = studentS.findStudent(id);
 		Dorm findDorm = findStudent.getDorm();

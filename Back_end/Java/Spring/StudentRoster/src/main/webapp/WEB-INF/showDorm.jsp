@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><c:out value="${dorm.name}" /></title>
+	<title><c:out value="${dorm.dormName}" /></title>
 	<!-- for Bootstrap CSS -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<!-- YOUR own local CSS -->
@@ -19,23 +19,26 @@
 	
 </head>
 <body class="m-5">
-	<header class="container-fluid d-flex justify-content center">
-		<h1><c:out value="${dorm.name}" /></h1>
+	<header class="container-fluid d-flex justify-content-center">
+		<h1><c:out value="${dorm.dormName}" /></h1>
 	</header>
 	
 	<main class="container-fluid">
 		<p><a href="/dorms">Dashboard</a></p>
 		
-		<form:form class="form" action="/dorms/create" method="post" modelAttribute="dorm">
+		<form:form class="form" action="/students/update/${dorm.id}" method="post" modelAttribute="student">
+			<input type="hidden" path="dorm" value="<c:out value="${dorm.id}"/>">
 	 		<div class="row">
-	 			<div class="col-6 border border-dark d-flex flex-column align-items-center">
-	 				<p><form:label class="pt-3  col-form-label" path="name">Students: </form:label></p>
-	 				<form:select path="" class="form-select">
-	 					<option></option>
-	 				</form:select>	 				
+	 			<div class="col-6 pt-3 border border-dark">
+	 				<p><form:label class="col-form-label" path="dorm">Students: </form:label></p>
+	 				<form:select name="id" path="id" class="form-select">
+	 					<c:forEach var="student" items="${students}">
+	 						<option value="<c:out value="${student.id}"/>"><c:out value="${student.studentName}"/> (<c:out value="${student.dorm.dormName}"/>)</option>
+	 					</c:forEach>
+		 			</form:select>	
 	 			</div>
-	 			<div class="col-6 pt-3 border border-dark d-flex align-items-center">
-					<button class="container-fluid btn border-dark">Create</button>
+	 			<div class="col-6 pt-3 border border-dark">
+					<button class="container-fluid btn border-dark">Add</button>
 	 			</div>
 	 		</div>
 
@@ -52,8 +55,12 @@
 				<tbody class="table-group-divider">
 					<c:forEach var="student" items="${dorm.students}">
 						<tr>
-							<td><c:out value="${student.name}" /></td>
-							<td><a href="/dorms/<c:out value="${dorm.id}" />">Remove</a></td>
+							<td><c:out value="${student.studentName}" /></td>
+							<td>
+							<form action="/students/delete/<c:out value="${student.id}"/>" method="post">
+								<input type="hidden" name="_method" value="delete">
+								<button class="btn text-light bg-danger border-dark">Delete</button>
+							</form>
 						</tr>
 					</c:forEach>
 				</tbody>

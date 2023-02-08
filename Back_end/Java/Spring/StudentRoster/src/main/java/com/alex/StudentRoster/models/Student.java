@@ -27,7 +27,7 @@ public class Student {
 	
 	@NotNull
 	@Size(min = 2, max = 255, message = "Student name must be at least 2 characters or less than 255 characters!")
-	private String name;
+	private String studentName;
 	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -39,43 +39,54 @@ public class Student {
     @JoinColumn(name="dorm_id")
     private Dorm dorm;
     
-    public Student() {
-    	
-    }
-	public Student(String name, Dorm dorm) {
-		this.name = name;
+	public Student() {
+		
+	}
+	
+	public Student(String studentName, Dorm dorm) {
+		this.studentName = studentName;
 		this.dorm = dorm;
 	}
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+
+	public String getStudentName() {
+		return studentName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
 	public Dorm getDorm() {
 		return dorm;
 	}
+
 	public void setDorm(Dorm dorm) {
 		this.dorm = dorm;
 	}
+
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();

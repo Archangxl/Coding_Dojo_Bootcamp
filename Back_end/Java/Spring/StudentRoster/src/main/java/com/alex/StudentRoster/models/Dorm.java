@@ -27,7 +27,7 @@ public class Dorm {
 	
 	@NotNull
 	@Size(min = 2, max = 255, message = "Dorm name must be at least 2 characters or less than 255 characters!")
-	private String name;
+	private String dormName;
 	
 	@Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -41,8 +41,8 @@ public class Dorm {
     public Dorm() {
     }
 
-	public Dorm( String name, List<Student> students) {
-		this.name = name;
+	public Dorm( String dormName, List<Student> students) {
+		this.dormName = dormName;
 		this.students = students;
 	}
 
@@ -54,12 +54,12 @@ public class Dorm {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getDormName() {
+		return dormName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setDormName(String dormName) {
+		this.dormName = dormName;
 	}
 
 	public Date getCreatedAt() {
