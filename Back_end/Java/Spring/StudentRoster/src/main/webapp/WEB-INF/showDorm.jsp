@@ -29,15 +29,15 @@
 		<form:form class="form" action="/students/update/${dorm.id}" method="post" modelAttribute="student">
 			<input type="hidden" path="dorm" value="<c:out value="${dorm.id}"/>">
 	 		<div class="row">
-	 			<div class="col-6 pt-3 border border-dark">
-	 				<p><form:label class="col-form-label" path="dorm">Students: </form:label></p>
+	 			<div class="d-flex pb-2 justify-content-center flex-column col-6 border border-dark">
+	 				<form:label class="col-form-label" path="dorm">Students: </form:label>
 	 				<form:select name="id" path="id" class="form-select">
 	 					<c:forEach var="student" items="${students}">
 	 						<option value="<c:out value="${student.id}"/>"><c:out value="${student.studentName}"/> (<c:out value="${student.dorm.dormName}"/>)</option>
 	 					</c:forEach>
 		 			</form:select>	
 	 			</div>
-	 			<div class="col-6 pt-3 border border-dark">
+	 			<div class="d-flex align-items-center col-6 border border-dark">
 					<button class="container-fluid btn border-dark">Add</button>
 	 			</div>
 	 		</div>
@@ -45,7 +45,7 @@
 		</form:form>
 		
 		<div class="row">
-			<table class="mt-2 col-12 container-fluid table table-bordered table-striped">
+			<table class="mt-4 col-12 container-fluid table table-bordered table-striped">
 				<thead>
 					<tr>
 						<th>Student</th>
@@ -59,7 +59,7 @@
 							<td>
 							<form action="/students/delete/<c:out value="${student.id}"/>" method="post">
 								<input type="hidden" name="_method" value="delete">
-								<button class="btn text-light bg-danger border-dark">Delete</button>
+								<button class="btn text-decoration-underline">Delete</button>
 							</form>
 						</tr>
 					</c:forEach>

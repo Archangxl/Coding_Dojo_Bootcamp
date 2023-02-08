@@ -53,16 +53,20 @@ public class MainController {
 			return "formStudent.jsp";
 		} else {
 			studentS.createStudent(student);
-			return "redirect:/dorms";
+			return "redirect:/students/new";
 		}
 	}
 	@PostMapping("/students/update/{id}")
 	public String updateStudentDorm(@ModelAttribute("student")Student student, Model model, @PathVariable("id") Long id, @RequestParam("id")Long studentID ) {
-		System.out.println(studentID);
-		Student findStudent = studentS.findStudent(studentID);
-		Dorm findDorm = findStudent.getDorm();
-		findStudent.setDorm(findDorm);
-		studentS.updateStudent(findStudent);
+		
+		Student originalStudent = studentS.findStudent(studentID);
+		String name = originalStudent.getStudentName();
+		Dorm dormGettingAdded = dormS.findDorm(id);
+		
+		Student studentBeingUpdated = new Student(name, dormGettingAdded);
+		studentBeingUpdated.setId(studentID);
+		Student updatedStudent = studentS.updateStudent(studentBeingUpdated);
+		
 		return "redirect:/dorms/" + id;
 		
 	}
@@ -72,7 +76,7 @@ public class MainController {
 			return "formDorm.jsp";
 		} else {
 			dormS.createDorm(dorm);
-			return "redirect:/dorms";
+			return "redirect:/dorms/new";
 		}
 	}
 	@DeleteMapping("/students/delete/{id}")
