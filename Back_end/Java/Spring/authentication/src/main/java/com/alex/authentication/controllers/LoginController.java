@@ -58,7 +58,7 @@ public class LoginController {
     	 return "Login.jsp";
      } 
      session.setAttribute("id", registering.getId());
-     return "Login.jsp";
+     return "redirect:/welcome";
  }
  
  @PostMapping("/login")
