@@ -1,5 +1,6 @@
 package com.alex.bookclub.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -17,7 +18,6 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
     
-    // TO-DO: Write register and login methods!
     public User register(User newUser, BindingResult result) {
     	
     	String emailEntered = newUser.getEmail();
@@ -64,4 +64,8 @@ public class UserService {
     		return null;
     	}
     	return user.get();    	}
+    
+    public List<User> getAllUsers() {
+    	return userRepo.findAll();
+    }
 }

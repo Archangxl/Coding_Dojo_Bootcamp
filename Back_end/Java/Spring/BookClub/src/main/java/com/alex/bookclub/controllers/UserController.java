@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.alex.bookclub.models.LoginUser;
 import com.alex.bookclub.models.User;
+import com.alex.bookclub.services.BookService;
 import com.alex.bookclub.services.UserService;
 
 @Controller
 public class UserController {
 	 @Autowired
 	 private UserService userServ;
+	 @Autowired
+	 private BookService bookServ;
 	 
 	 @GetMapping("/")
 	 public String index(Model model) {
@@ -42,6 +45,9 @@ public class UserController {
 		 Long id = (Long) session.getAttribute("id");
 		 User user = userServ.findById(id);
 		 model.addAttribute("user", user);
+		 
+		 model.addAttribute("books", bookServ.findAllBooks());
+
 		 return "dashboard.jsp";
 	 }
 	 
@@ -61,8 +67,6 @@ public class UserController {
 	 @PostMapping("/login")
 	 public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
 	         BindingResult result, Model model, HttpSession session) {
-	     
-	     // Add once service is implemented:
 	     User user = userServ.login(newLogin, result);
 	 
 	     if(user == null) {

@@ -1,12 +1,15 @@
 package com.alex.bookclub.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -48,14 +51,18 @@ public class User {
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
-  
+    
+    @OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+    private List<Bookshelf> bookshelfs;
+    
     public User() {}
-
-	public User(String name,String email,String password,String confirm) {
+    
+	public User(String name,String email,String password,String confirm,List<Bookshelf> bookshelfs) {
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.confirm = confirm;
+		this.bookshelfs = bookshelfs;
 	}
 
 	public Long getId() {
@@ -97,6 +104,23 @@ public class User {
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
+
+	public List<Bookshelf> getBookshelfs() {
+		return bookshelfs;
+	}
+
+	public void setBookshelfs(List<Bookshelf> bookshelfs) {
+		this.bookshelfs = bookshelfs;
+	}
+	
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();

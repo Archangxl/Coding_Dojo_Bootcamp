@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Read Share</title>
+	<title>Create Bookshelf</title>
 	<!-- for Bootstrap CSS -->
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 	<!-- YOUR own local CSS -->
@@ -21,38 +21,26 @@
 <body class="m-5">
 	<header class="row container-fluid">
 		<div class="d-flex justify-content-between">
-			<h1>Welcome, <c:out value="${user.name}!" /></h1>
-			<p><a href="/logout">logout</a></p>
-		</div>
-		<div class="d-flex justify-content-between">
-			<p>This is your dashboard. Nothing to see here yet.</p>
-			<p><a href="/bookshelf/form">Create a Bookshelf</a></p>
-			<p><a href="/book/form">Create a Book</a></p>
+			<h1>Create a Bookshelf</h1>
+			<p><a href="/dashboard">back to the shelves</a></p>
 		</div>
 	</header>
 	
 	<main class="row container-fluid">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Title</th>
-					<th>Author Name</th>
-					<th>Posted By</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="book" items="${books}">
-					<tr>
-						<td><c:out value="${book.id}" /></td>
-						<td><a href="book/view/${bookid}"><c:out value="${book.title}" /></a></td>
-						<td><c:out value="${book.author}" /></td>
-						<td><c:out value="${book.bookshelf.user.name}" /></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		
+		<form:form class="form" action="/bookshelf/create" method="post" modelAttribute="newBookshelf">
+			<form:input path="user" type="hidden" value="${user.id}" />
+			<div class="row">
+				<div class="col-8">
+					<form:label class="col-form-label" path="bookShelfName">Bookshelf Name:</form:label>
+					<form:errors class="text-danger" path="bookShelfName"/>
+					<p><form:input class="form-control" path="bookShelfName"></form:input></p>
+					
+					<div class="d-flex justify-content-end">
+						<button class="btn border-dark">Submit</button>
+					</div>
+				</div>
+			</div>
+		</form:form>
 	</main>
 </body>
 </html>
