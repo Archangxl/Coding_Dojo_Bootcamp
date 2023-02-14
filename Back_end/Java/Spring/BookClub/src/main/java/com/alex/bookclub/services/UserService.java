@@ -44,6 +44,7 @@ public class UserService {
     	Optional<User> potentialUser = userRepo.findByEmail(emailEntered);
 
     	if (!potentialUser.isPresent()) {
+    		result.rejectValue("emailLogin", "Email Invalid", "Email is incorrect!");
     		return null;
     	}
     	if (result.hasErrors()) {

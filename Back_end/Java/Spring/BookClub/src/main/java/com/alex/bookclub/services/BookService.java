@@ -27,7 +27,13 @@ public class BookService {
 		}
 		return null;
 	}
-	public void deleteBookById(Long id) {
-		repo.deleteById(id);
+	public Book deleteBookById(Long id) {
+		Optional<Book> book = repo.findById(id);
+		if(book.isPresent()) {
+			repo.deleteById(id);
+		} else {
+			System.out.println("error");
+		}
+		return null;
 	}
 }

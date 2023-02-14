@@ -46,9 +46,10 @@
 					<div class="px-3">
 						 <p class="btn border-dark"><a class="text-decoration-none text-dark" href="/book/view/<c:out value="${book.id}" />">Edit</a></p>
 					</div>
-					<form:form>
+					<form action="/book/delete/${book.id}" method="post">
+						<input type="hidden" name="_method" value="delete">
 						<button class="btn border-dark">Delete</button>
-					</form:form>
+					</form>
 				</div>
 			</div>
 			
