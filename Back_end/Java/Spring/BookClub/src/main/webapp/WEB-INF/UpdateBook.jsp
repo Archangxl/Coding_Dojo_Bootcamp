@@ -21,31 +21,32 @@
 <body class="m-5">
 	<header class="row container-fluid">
 		<div class="d-flex justify-content-between">
-			<h1>Create a Bookshelf</h1>
+			<h1>Change your entry</h1>
 			<p><a href="/dashboard">back to the shelves</a></p>
 		</div>
 	</header>
 	
 	<main class="row container-fluid">
-		<form:form class="form" action="/book/create" method="post" modelAttribute="newBook">
+		<main class="row container-fluid">
+		<form:form class="form" action="/book/update/${book.id}" method="put" modelAttribute="updateBook">
 			<div class="row">
 				<div class="col-8">
 					<form:label class="col-form-label" path="title">Title:</form:label>
 					<form:errors class="text-danger" path="title"/>
-					<p><form:input class="form-control" path="title"></form:input></p>
+					<p><form:input class="form-control" value="${book.title}" path="title"></form:input></p>
 					
 					<form:label class="col-form-label" path="author">Author:</form:label>
 					<form:errors class="text-danger" path="author"/>
-					<p><form:input class="form-control" path="author"></form:input></p>
+					<p><form:input class="form-control" value="${book.author}" path="author"></form:input></p>
 					
 					<form:label class="col-form-label" path="thought">Thoughts:</form:label>
 					<form:errors class="text-danger" path="thought"/>
-					<p><form:input class="form-control" path="thought"></form:input></p>
+					<p><form:input class="form-control" value="${book.thought}" path="thought"></form:input></p>
 					
 					<label class="col-form-label">Bookshelf:</label>
 					<p><form:select class="form-select" path="bookshelf">
 						<c:forEach var="bookshelf" items="${user.bookshelfs}">
-								<form:option value="${bookshelf.id}"><c:out value="${bookshelf.bookShelfName}" /></form:option>
+							<form:option value="${bookshelf.id}"><c:out value="${bookshelf.bookShelfName}" /></form:option>
 						</c:forEach>
 					</form:select></p>
 					
@@ -55,5 +56,6 @@
 				</div>
 			</div>
 		</form:form>
+	</main>
 	</main>
 </body>

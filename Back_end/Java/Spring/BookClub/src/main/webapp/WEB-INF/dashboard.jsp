@@ -25,7 +25,7 @@
 			<p><a href="/logout">logout</a></p>
 		</div>
 		<div class="d-flex justify-content-between">
-			<p>This is your dashboard. Nothing to see here yet.</p>
+			<p>Books from everyone's shelves:</p>
 			<p><a href="/bookshelf/form">Create a Bookshelf</a></p>
 			<p><a href="/book/form">Create a Book</a></p>
 		</div>
@@ -45,7 +45,7 @@
 				<c:forEach var="book" items="${books}">
 					<tr>
 						<td><c:out value="${book.id}" /></td>
-						<td><a href="book/view/${bookid}"><c:out value="${book.title}" /></a></td>
+						<td><a href="book/<c:out value="${book.id}" />"><c:out value="${book.title}" /></a></td>
 						<td><c:out value="${book.author}" /></td>
 						<td><c:out value="${book.bookshelf.user.name}" /></td>
 					</tr>

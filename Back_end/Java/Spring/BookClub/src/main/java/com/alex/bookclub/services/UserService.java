@@ -68,4 +68,11 @@ public class UserService {
     public List<User> getAllUsers() {
     	return userRepo.findAll();
     }
+    
+    public Boolean compareUserIds(Long firstId, Long SecondId) {
+    	if(firstId.equals(SecondId)) {
+    		return true;
+    	}
+    	return false;
+    }
 }

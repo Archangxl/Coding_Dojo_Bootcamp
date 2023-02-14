@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.alex.bookclub.models.Bookshelf;
 import com.alex.bookclub.models.LoginUser;
 import com.alex.bookclub.models.User;
 import com.alex.bookclub.services.BookService;
+import com.alex.bookclub.services.BookshelfService;
 import com.alex.bookclub.services.UserService;
 
 @Controller
@@ -22,6 +24,8 @@ public class UserController {
 	 private UserService userServ;
 	 @Autowired
 	 private BookService bookServ;
+	 @Autowired
+	 private BookshelfService bookshelfServ;
 	 
 	 @GetMapping("/")
 	 public String index(Model model) {
@@ -61,6 +65,10 @@ public class UserController {
 	    	 return "Login.jsp";
 	     } 
 	     session.setAttribute("id", registering.getId());
+	     Bookshelf bookshelf = new Bookshelf();
+	     bookshelf.setBookShelfName("Shelf 1");
+	     bookshelf.setUser(registering);
+	     bookshelfServ.createOrUpdateBookshelf(bookshelf);
 	     return "redirect:/dashboard";
 	 }
 	 
