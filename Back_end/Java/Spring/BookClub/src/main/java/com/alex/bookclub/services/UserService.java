@@ -25,6 +25,7 @@ public class UserService {
     	Optional<User> potentialUser = userRepo.findByEmail(emailEntered);
     	
     	if (potentialUser.isPresent()) {
+    		result.rejectValue("email", "Email Invalid", "Email already exists!");
     		return null;
     	}
     	if (!passwordEntered.equals(newUser.getConfirm())) {
