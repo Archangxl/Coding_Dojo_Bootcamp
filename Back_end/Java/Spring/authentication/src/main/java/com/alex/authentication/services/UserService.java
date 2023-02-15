@@ -25,6 +25,7 @@ public class UserService {
     	Optional<User> potentialUser = userRepo.findByEmail(emailEntered);
     	
     	if (potentialUser.isPresent()) {
+            result.rejectValue("email", "Email Invalid", "Email already exists!");
     		return null;
     	}
     	if (!passwordEntered.equals(newUser.getConfirm())) {
@@ -44,6 +45,7 @@ public class UserService {
     	Optional<User> potentialUser = userRepo.findByEmail(emailEntered);
 
     	if (!potentialUser.isPresent()) {
+            result.rejectValue("emailLogin", "Email Invalid", "Email is incorrect!");
     		return null;
     	}
     	if (result.hasErrors()) {
