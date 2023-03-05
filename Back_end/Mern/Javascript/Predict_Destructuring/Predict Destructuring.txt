@@ -1,0 +1,31 @@
+Problem 1:
+
+system logs...
+(my prediction: undefined) correct prediction: Tesla 
+Mercedes
+
+Problem 2:
+
+system logs...
+(my prediction: Elon) correct prediction: reference error
+Elon
+
+Problem 3:
+
+system logs...
+12345
+undefined
+
+Problem 4:
+
+system logs...
+false
+true
+
+Problem 5:
+
+system logs...
+value
+[1,5,1,8,3,3]
+(my prediction: undefined) correct prediction: 1
+(my prediction: syntax error) correct prediction: 5
