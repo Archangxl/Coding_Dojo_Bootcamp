@@ -23,7 +23,7 @@ function App() {
     
   }
 
-
+  
   return (
     <div className="App">
       <form onSubmit={ creatUser }>
@@ -55,7 +55,7 @@ function App() {
           <label>Confirm Password: </label>
           <input type="password" onChange={(e) => setConfirm(e.target.value)} value={confirm} />
         </div>
-        <button>Submit</button>
+      <button>Submit</button>
       </form>
     </div>
   );
