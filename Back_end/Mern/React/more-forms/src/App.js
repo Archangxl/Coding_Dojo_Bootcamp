@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <form onSubmit={ creatUser }>
         <div>
-          {firstName.length < 2 && firstName.length > 0 ? <p><b>First Name must be more than 2 characters!</b></p> : null}
+        {firstName.length < 2 && firstName.length > 0 ? <p><b>First Name must be more than 2 characters!</b></p> : null}
           <label>First Name: </label>
           <input type="text" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
         </div>
