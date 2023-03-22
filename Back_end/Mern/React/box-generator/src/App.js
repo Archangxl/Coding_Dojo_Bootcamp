@@ -1,46 +1,16 @@
 import React, {useState} from 'react';
-
+import Form from './components/form';
+import Display from './components/display';
 
 function App() {
-  const [color, setColor] = useState("");
-  const [box, setBox] = useState();
-  const inputs = [];
-  const display = [];
-  const onCreate = (e) => {
-    e.preventDefault();
-
-    inputs.push(color);
-    setColor("");
-    
-    return (
-      <div>
-      {
-        inputs.map((item) => setBox(<div style={{
-          background: item,
-          display: 'flex',
-          height: '50px',
-          width: '50px'
-        }}></div>)
-        )
-      }
-      </div>
-    );
-  } 
+  const [arrayTransferred, setArrayTransferred] = useState([]);
 
   return (
-    <div>
-
-      <form onSubmit={ onCreate }>
-        <div>
-          <label>Color: </label>
-          <input type="text" onChange={ (e) => setColor(e.target.value) } value={color}/>
-          <button>Add</button>
-        </div>
-      </form>
-      {box}
-
-    </div>
-  );
+    <>
+      <Form transferingArray={ arrayTransferred } setTransferingArray={ setArrayTransferred }/>
+      <Display color={arrayTransferred} />
+    </>
+  )
 }
 
 export default App;
