@@ -2,15 +2,12 @@ import React, {useState } from "react";
 
 const Form = (props) => {
     const [color, setColor] = useState("");
-    const [colorArray, setColorArray] = useState([]);
     const {transferingArray, setTransferingArray} = props;
+
     const onCreate = (e) => {
         e.preventDefault();
 
-        setColorArray(color);
-
-        setTransferingArray(colorArray);
-        console.log(transferingArray);
+        setTransferingArray([ ...transferingArray, color ]);
         setColor("");
     } 
 

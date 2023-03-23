@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Form transferingArray={ arrayTransferred } setTransferingArray={ setArrayTransferred }/>
-      <Display color={arrayTransferred} />
+      <Display receivedArray={arrayTransferred} />
     </>
   )
 }
