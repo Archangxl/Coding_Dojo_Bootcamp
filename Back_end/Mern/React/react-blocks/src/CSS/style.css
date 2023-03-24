@@ -4,19 +4,19 @@
     margin: 10px;
     padding: 10px;
     background-color: #dddddd;
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .Header {
     background-color: #6aa84f;
     height: 100px;
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .Navigation {
     background-color: #6fa8dc;
-    height: 340px;
-    border: 2px solid black;
+    height: 390px;
+    border: 3px solid black;
     margin: 10px 0px;
     flex: 1;
 }
@@ -24,8 +24,8 @@
 .Main {
     background-color: #e06666;
     margin: 10px 0px 10px 10px;
-    height: 400px;
-    border: 2px solid black;
+    height: 475px;
+    border: 3px solid black;
     flex: 3;
 }
 
@@ -35,17 +35,17 @@
 
 .SubContent {
     background-color: #ffd966;
-    height: 300px;
-    border: 2px solid black;
+    height: 350px;
+    border: 3px solid black;
     margin: 5px;
     flex: 1;
 }
 
 .Advertisment {
     background-color: #b4a7d6;
-    border: 2px solid black;
+    border: 3px solid black;
     margin: 5px;
-    height: 60px;
+    height: 90px;
 }
 
 .Flex {
