@@ -24,14 +24,13 @@ const Form = (props) => {
     }
 
     return (
-        <>
-            <form onSubmit={ formSubmitForTask }>
-                <label>
-                    Task: <input name="taskName" type="text" onChange={ changeHandler } value={task.taskName} />
-                </label>
-                <button>Submit</button>
-            </form>
-        </>
+        <form onSubmit={ formSubmitForTask }>
+            <div className="form">
+                <label>Task:</label>
+                <input name="taskName" type="text" onChange={ changeHandler } value={task.taskName} />
+                <button>Add</button>
+            </div>
+        </form>
     );
 
 }

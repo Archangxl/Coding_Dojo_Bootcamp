@@ -20,19 +20,19 @@ const Display = (props) => {
     }
 
     return (
-        <>
+        <div>
             {
                 displayCompRecievingTaskArrayFromApp.map((task, index) => (
-                    <div className="flex" key={index}>
-                        <input type="checkbox" checked={task.completed} onClick={ () => changeCheckedStatus(task) }></input>
+                    <div className="task-list" key={index}>
                         {
                             task.completed ? <p className="line-through">{task.taskName}</p>: <p>{task.taskName}</p>    
                         }
+                        <input type="checkbox" checked={task.completed} onClick={ () => changeCheckedStatus(task) }></input>
                         <button onClick={ ()=> deleteTask(task) }>Delete</button>
                     </div>
                 ))
             }
-        </>
+        </div>
     );
 
 

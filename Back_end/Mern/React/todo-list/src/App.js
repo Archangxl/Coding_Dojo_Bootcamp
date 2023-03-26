@@ -17,7 +17,7 @@ function App() {
 
       <main>
         <div className="flex">
-          <Form tansferTaskArray={ appReceivingFormTaskArrary } setTransferTaskArray={ setAppReceivingFormTaskArray } />
+        <Form tansferTaskArray={ appReceivingFormTaskArrary } setTransferTaskArray={ setAppReceivingFormTaskArray } />
         </div>
         <div className="flex">
           <Display displayCompRecievingTaskArrayFromApp={ appReceivingFormTaskArrary } setDisplayCompRecievingTaskArrayFromApp={ setAppReceivingFormTaskArray } />
