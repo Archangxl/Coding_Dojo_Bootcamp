@@ -67,9 +67,16 @@ let coordinates = [
 let num = 10;
 // * Build a function that takes the list of 'coordinates' and 'num' above and returns back a number of how many times x+y === num
 // * the output with the data provided should be 2
-
-
-
+const addCoordinatesAndCompareToNum = (num) => {
+    let howManyTimesXPlusYEquallsNum = 0;
+    for(let i = 0; i < coordinates.length; i++) {
+        if (coordinates[i].x + coordinates[i].y === num) {
+            howManyTimesXPlusYEquallsNum++;
+        }
+    }
+    console.log(howManyTimesXPlusYEquallsNum);
+}
+addCoordinatesAndCompareToNum(num);
 
 
 
@@ -82,3 +89,16 @@ let nums = [1,2,3,4];
 // * example reverseArr([1,2,3,4]) would return [4,3,2,1]
 // * To start you can create a new array and return that 
 // * Bonus challenge try to solve the problem without making a second array (working in place)
+
+const reverseArray = (arr) => {
+    for (let i=arr.length; i >= 0; i--) {
+        arr.push(arr[i]);
+    }
+    for (let i=0; i < arr.length; i++) {
+        arr.shift();
+    }
+    console.log(arr);
+}
+
+reverseArray(nums);
+reverseArray([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
