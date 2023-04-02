@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 const ArrayTabs = (props) => {
 
     const {arrayOfTabs} = props;
+    console.log("hello")
 
     return (
         <>
