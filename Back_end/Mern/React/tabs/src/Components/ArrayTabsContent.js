@@ -5,9 +5,20 @@ const ArrayTabsContent = (props) => {
     const {receivingArrayOfTabsFromApp, receivingTabContentIndexNumberFromApp} = props;
 
     return (
-        <div className="m-2 p-2 contents">
-            <p>{receivingArrayOfTabsFromApp[receivingTabContentIndexNumberFromApp].content}</p>
-        </div>
+        <>
+            {
+                receivingTabContentIndexNumberFromApp === 0 ? 
+                <div>
+
+                </div> 
+                
+                :
+
+                <div className="m-2 p-2 contents">
+                    <p>{receivingArrayOfTabsFromApp[receivingTabContentIndexNumberFromApp].content}</p>
+                </div>
+            }
+        </>
     );
 
 }
