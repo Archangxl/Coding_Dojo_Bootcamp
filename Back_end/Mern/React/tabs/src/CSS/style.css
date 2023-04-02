@@ -1,0 +1,14 @@
+.tabs {
+    padding: 0px 25px;
+    color: white;
+    background-color: black;
+}
+.tabs:hover {
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.contents {
+    border: 2px solid black;
+}

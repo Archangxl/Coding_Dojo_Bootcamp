@@ -1,23 +1,25 @@
-import React, {useState} from 'react';
+import React from 'react';
+
 
 const ArrayTabs = (props) => {
 
-    const {arrayOfTabs} = props;
-    console.log("hello")
+    const {arrayOfTabs, tabContentIndexNumber, setTabContentIndexNumber} = props;
 
+    const contentIndexGetter = (index) => {
+        setTabContentIndexNumber(index);
+    }
     return (
-        <>
+        <div className="d-flex">
             {
                 arrayOfTabs.map((tab, index) => {
                     return (
-                        <div key={index}>
-                            <h1>{tab.label}</h1>
-                            <p>{tab.content}</p>
+                        <div className="tabs m-2 bg-gradient" key={index} onClick={ (e)=> contentIndexGetter(index)}>
+                            <h2>{tab.label}</h2>
                         </div>
                     );
                 })
             }
-        </>
+        </div>
     );
 }
 export default ArrayTabs;
