@@ -10,8 +10,9 @@ import Promises from './components/Promises';
 
 function App() {
     return (
-        <div className="App">
-            <Promises />
+        <div className=" m-5 d-flex justify-content-center">
+            <h1>Hello</h1>
+            <button className="btn border border-dark">Click Me</button>
         </div>
     );
 }

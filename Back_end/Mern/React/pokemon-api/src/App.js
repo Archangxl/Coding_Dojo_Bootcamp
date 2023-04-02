@@ -1,10 +1,9 @@
-import Pokemon from './Components/Pokemon';
-import './App.css';
+import PokeApi from './components/PokeAPi';
 
 function App() {
   return (
-    <div className="App">
-      <Pokemon />
+    <div>
+      <PokeApi />
     </div>
   );
 }
