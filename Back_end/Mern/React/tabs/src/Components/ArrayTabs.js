@@ -3,15 +3,18 @@ import React from 'react';
 const ArrayTabs = (props) => {
 
     const {arrayOfTabs, tabContentIndexNumber, setTabContentIndexNumber} = props;
-
+    console.log(document.getElementsByClassName("contents"));
     function myMove() {
-        const elem = document.getElementById("animate");   
-        console.log(elem);
-        let marginTop = -12;
-        
-        if (marginTop != 5) {
-            marginTop++;
-            elem.style.marginTop = marginTop + "10px";
+        const content = document.getElementById("animate"); 
+        let contentMarginTop = -10;
+        let interval = setInterval(styleChanger, 25);
+        function styleChanger() {
+            if (contentMarginTop !== 25) {
+                contentMarginTop+=1;
+                content.style.marginTop = contentMarginTop + "px";
+            } else {
+                clearInterval(interval);
+            }
         }
     }
 
@@ -32,7 +35,7 @@ const ArrayTabs = (props) => {
                     }
                     return (
                         <div 
-                            className="tabs m-2 bg-gradient" 
+                            className="tabs m-2" 
                             key={index} 
                             onClick={ 
                                 (e)=> contentIndexGetter(index)

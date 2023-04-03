@@ -10,22 +10,22 @@ function App() {
     array.push({"label": "Tab 1", "content": "Tab 1 content is showing here"});
     array.push({"label": "Tab 2", "content": "Tab 2 content is showing here"});
     array.push({"label": "Tab 3", "content": "Tab 3 content is showing here"});
-    const [arrayOfTabsFromApp, setArrayOfTabsFromApp] = useState(array);
+    const [arrayOfTabsFromApp] = useState(array);
 
     return (
         <>
-            <header className="d-flex justify-content-center">
+            <header className="">
                 <ArrayTabs 
                     arrayOfTabs={arrayOfTabsFromApp} 
                     tabContentIndexNumber={tabContentIndexNumberReceivingFromArrayTabsComponent} 
                     setTabContentIndexNumber={setTabContentIndexNumberReceivingFromArrayTabsComponent} 
                 />
             </header>
-            <main className="d-flex justify-content-center" id="animate">
-                <ArrayTabsContent
-                    receivingArrayOfTabsFromApp={arrayOfTabsFromApp}
-                    receivingTabContentIndexNumberFromApp={tabContentIndexNumberReceivingFromArrayTabsComponent}
-                />
+            <main className="d-flex" id="animate">
+                    <ArrayTabsContent 
+                        receivingArrayOfTabsFromApp={arrayOfTabsFromApp}
+                        receivingTabContentIndexNumberFromApp={tabContentIndexNumberReceivingFromArrayTabsComponent}
+                    />
             </main>
         </>
 

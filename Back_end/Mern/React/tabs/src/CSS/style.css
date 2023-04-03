@@ -2,6 +2,7 @@
     padding: 0px 25px;
     color: white;
     background-color: black;
+    border: 2px solid white;
 }
 .tabs:hover {
     color: black;
@@ -11,4 +12,5 @@
 
 .contents {
     border: 2px solid black;
+    width: 400px;
 }

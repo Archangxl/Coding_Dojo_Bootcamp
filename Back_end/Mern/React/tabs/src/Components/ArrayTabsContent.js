@@ -13,10 +13,11 @@ const ArrayTabsContent = (props) => {
                 </div> 
                 
                 :
-
-                <div className="m-2 p-2 contents">
-                    <p>{receivingArrayOfTabsFromApp[receivingTabContentIndexNumberFromApp].content}</p>
-                </div>
+                <>
+                    <div className="m-2 p-3 d-flex contents">
+                        <p>{receivingArrayOfTabsFromApp[receivingTabContentIndexNumberFromApp].content}</p>
+                    </div>
+                </>
             }
         </>
     );
