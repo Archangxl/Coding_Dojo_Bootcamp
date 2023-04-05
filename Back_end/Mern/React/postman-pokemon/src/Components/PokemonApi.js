@@ -3,23 +3,40 @@ import {useParams} from "react-router-dom";
 
 const PokemonApi = () => {
 
-    const [pokemon, setPokemon] = useState([]);
+    const [pokemonAbilities, setPokemonAbilities] = useState([]);
+    const [pokemonName, setPokemonName] = useState([]);
     const {numberOrName} = useParams();
-    const url = "https://pokeapi.co/api/v2/pokemon/"+ numberOrName;
-    console.log(url);
+
     useEffect(()=> {
-        fetch(url)
+        fetch("http://pokeapi.co/api/v2/pokemon/"+numberOrName)
             .then(response => response.json())
-            .then(response => setPokemon(response.results))
+            .then(response => setPokemonAbilities(response.abilities))
             .catch(err => console.log(err) )
     }, [])
-    console.log(pokemon);
-    return (
-        <>
-            {pokemon}
-        </>
-    );
 
+    useEffect(() => {
+        fetch("http://pokeapi.co/api/v2/pokemon/"+numberOrName)
+            .then(response => response.json())
+            .then(response => setPokemonName(response.name))
+            .catch(err => console.log(err));
+    })
+
+    return (
+        <div>
+            
+            <ul>
+                {
+                pokemonAbilities.map((ability, index) => {
+                return (
+                    
+                    <li key={index} >{ability.name}</li>
+                    
+                );
+                }}
+            </ul>
+
+        </div>
+    );
 }
 
 export default PokemonApi;
