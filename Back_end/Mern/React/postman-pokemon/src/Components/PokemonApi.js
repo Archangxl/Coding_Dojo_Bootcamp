@@ -2,18 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 
 const PokemonApi = () => {
-
-    const [pokemonAbilities, setPokemonAbilities] = useState([]);
-    const [pokemonName, setPokemonName] = useState([]);
     const {numberOrName} = useParams();
 
-    useEffect(()=> {
-        fetch("http://pokeapi.co/api/v2/pokemon/"+numberOrName)
-            .then(response => response.json())
-            .then(response => setPokemonAbilities(response.abilities))
-            .catch(err => console.log(err) )
-    }, [])
-
+    const [pokemonName, setPokemonName] = useState([]);
     useEffect(() => {
         fetch("http://pokeapi.co/api/v2/pokemon/"+numberOrName)
             .then(response => response.json())
@@ -21,18 +12,41 @@ const PokemonApi = () => {
             .catch(err => console.log(err));
     })
 
+    const [pokemonAbilities, setPokemonAbilities] = useState([]);
+    useEffect(()=> {
+        fetch("http://pokeapi.co/api/v2/pokemon/"+numberOrName)
+            .then(response => response.json())
+            .then(response => setPokemonAbilities(response.abilities))
+            .catch(err => console.log(err) )
+    }, [])
+
+    const [pokemonApiResults, setPokemonApiResults] = useState();
+    useEffect(()=> {
+        fetch("http://pokeapi.co/api/v2/pokemon/"+numberOrName)
+            .then(response => response.json())
+            .then(response => setPokemonApiResults(response))
+            .catch(err => console.log(err) )
+    }, [])
+    console.log(pokemonApiResults);
+
+    const capitalizeFirstLetter = (word) => {
+        return word.toString().charAt(0).toUpperCase() + word.slice(1);
+    }
+
     return (
-        <div>
-            
-            <ul>
+        <div className="card">
+            <h1>{capitalizeFirstLetter(pokemonName)}</h1>
+            <h4>Abilities</h4>
+            <ul>                    
                 {
-                pokemonAbilities.map((ability, index) => {
-                return (
-                    
-                    <li key={index} >{ability.name}</li>
-                    
-                );
-                }}
+                    pokemonAbilities.map((abilities, index) => {
+                        return (
+            
+                            <li key={index}>{capitalizeFirstLetter(abilities.ability.name)}</li>
+                            
+                        )
+                    })
+                }
             </ul>
 
         </div>
