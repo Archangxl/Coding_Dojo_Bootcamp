@@ -4,9 +4,11 @@ import {useParams} from "react-router-dom";
 const PokemonApi = () => {
     const {numberOrName} = useParams();
     const lowerCase = numberOrName.toString().toLowerCase();
+    const url = "http://pokeapi.co/api/v2/pokemon/"+lowerCase;
+    
     const [pokemonName, setPokemonName] = useState([]);
     useEffect(() => {
-        fetch("http://pokeapi.co/api/v2/pokemon/"+lowerCase)
+        fetch(url)
             .then(response => response.json())
             .then(response => setPokemonName(response.name))
             .catch(err => console.log(err));
@@ -14,7 +16,7 @@ const PokemonApi = () => {
 
     const [pokemonAbilities, setPokemonAbilities] = useState([]);
     useEffect(()=> {
-        fetch("http://pokeapi.co/api/v2/pokemon/"+lowerCase)
+        fetch(url)
             .then(response => response.json())
             .then(response => setPokemonAbilities(response.abilities))
             .catch(err => console.log(err) )
@@ -22,7 +24,7 @@ const PokemonApi = () => {
 
     const [pokemonApiResults, setPokemonApiResults] = useState();
     useEffect(()=> {
-        fetch("http://pokeapi.co/api/v2/pokemon/"+lowerCase)
+        fetch(url)
             .then(response => response.json())
             .then(response => setPokemonApiResults(response))
             .catch(err => console.log(err) )
