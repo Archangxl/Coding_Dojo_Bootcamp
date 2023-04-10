@@ -1,0 +1,53 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1f 1fr 1fr 1fr 1fr;
+}
+
+.box {
+    background-color: rgb(246, 246, 246);
+    color: rgb(163,163,163);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid rgb(236,236,236);
+    border-bottom: 2px solid rgb(236,236,236);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    border-radius: 5px;
+}
+h2 {
+    grid-area: 1 / 2;
+    display: flex;
+    justify-content: center;
+}
+.grid-1 {
+    grid-area: 2 / 2;
+    margin-bottom: 10px;
+}
+.grid-2 {
+    grid-area: 3 / 2;
+    margin-bottom: 10px;
+}
+.grid-3 {
+    grid-area: 4 / 2;
+    margin-bottom: 10px;
+}
+.grid-4 {
+    grid-area: 5/2;
+    display: flex;
+    justify-content: center;
+    background-color: white !important;
+    border: 2px white solid !important;
+}
+input, textarea {
+    border: 2px solid rgb(236,236,236);
+    border-radius: 5px;
+}
+button {
+    padding: 5px 50px;
+    background-color: rgb(246, 246, 246);
+    border: 2px solid rgb(236,236,236);
+    border-radius: 5px;
+}
