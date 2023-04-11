@@ -1,7 +1,7 @@
-import react, {useEffect, useState} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
 
-const Form = ( ) => {   
+const Form = (props) => {   
 
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState();
@@ -42,6 +42,7 @@ const Form = ( ) => {
                 </div>
 
             </form>
+            {props.children}
         </>
     );
 
