@@ -1,6 +1,6 @@
 .form {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1f 1fr 1fr 1fr 1fr;
 }
 
@@ -46,6 +46,7 @@ p {
 input, textarea {
     border: 2px solid rgb(236,236,236);
     border-radius: 5px;
+    padding: 5px;
 }
 button {
     padding: 5px 50px;
