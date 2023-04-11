@@ -31,7 +31,7 @@ const Form = (props) => {
                 </div>
                 <div className='box grid-2'>
                     <label>Price</label>
-                    <input onChange={(e)=> setPrice(e.target.value)} type="text"></input>
+                    <input type="number" onChange={(e)=> setPrice(e.target.value)}></input>
                 </div>
                 <div className='box grid-3'>
                     <label>Description</label>
