@@ -16,11 +16,13 @@
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     border-radius: 5px;
+    font-size: x-large;
 }
-h2 {
+p {
     grid-area: 1 / 2;
     display: flex;
     justify-content: center;
+    font-size: x-large;
 }
 .grid-1 {
     grid-area: 2 / 2;
@@ -50,4 +52,5 @@ button {
     background-color: rgb(246, 246, 246);
     border: 2px solid rgb(236,236,236);
     border-radius: 5px;
+    font-size: large;
 }

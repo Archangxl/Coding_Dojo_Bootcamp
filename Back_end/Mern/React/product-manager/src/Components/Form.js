@@ -5,7 +5,7 @@ const Form = ( ) => {
     return (
         <>
             <form className='form'>
-                <h2>Product Manager</h2>
+                <p>Product Manager</p>
                 <div className='box grid-1'>
                     <label>Title</label>
                     <input type="text"></input>
