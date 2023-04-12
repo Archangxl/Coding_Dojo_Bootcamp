@@ -16,7 +16,6 @@ const Form = (props) => {
         })
             .then(res=>{
                 console.log(res)
-                console.log(res.data);
             })
             .catch(err=>console.log(err));
     }
@@ -24,7 +23,9 @@ const Form = (props) => {
     return (
         <>
             <form onSubmit={onSubmitHandler} className='form'>
-                <p>Product Manager</p>
+                <div className='header'>
+                    <h2>Product Manager</h2>
+                </div>
                 <div className='box grid-1'>
                     <label>Title</label>
                     <input onChange={(e)=> setTitle(e.target.value)} type="text"></input>
@@ -38,7 +39,7 @@ const Form = (props) => {
                     <textarea onChange={(e)=> setDescription(e.target.value)}></textarea>
                 </div>
                 <div className='box grid-4'>
-                    <button>Create</button>
+                    <button className='formSubmitButton'>Create</button>
                 </div>
 
             </form>

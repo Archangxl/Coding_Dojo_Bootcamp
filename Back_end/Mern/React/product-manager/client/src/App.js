@@ -1,8 +1,9 @@
 import { BrowserRouter ,Routes, Route} from 'react-router-dom'
 import Form from './Components/Form';
 import AllProducts from './Components/AllProducts';
-import "../src/CSS/formStyle.css"
+import "../src/CSS/style.css"
 import SingleProduct from './Components/SingleProduct';
+import UpdateForm from './Components/UpdateForm';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
             />
 
             <Route path="/:id" element={ <SingleProduct /> }/>
+            <Route path='/edit/:id' element={<UpdateForm />}/>
 
         </Routes>
     </BrowserRouter>

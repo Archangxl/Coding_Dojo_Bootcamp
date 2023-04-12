@@ -1,0 +1,119 @@
+.form {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+}
+
+.box {
+    background-color: rgb(246, 246, 246);
+    color: rgb(163,163,163);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid rgb(236,236,236);
+    border-bottom: 2px solid rgb(236,236,236);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.header {
+    grid-area: 1/2;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.nav-bar {
+    grid-area: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar button {
+    margin: 5px;
+}
+
+.formSubmitButton:hover, .nav-bar button:hover {
+    background-color: white !important;
+    color: black;
+    cursor: pointer;
+}
+
+.grid-1 {
+    grid-area: 2 / 2;
+    margin-bottom: 10px;
+}
+.grid-2 {
+    grid-area: 3 / 2;
+    margin-bottom: 10px;
+}
+.grid-3 {
+    grid-area: 4 / 2;
+    margin-bottom: 10px;
+}
+.grid-4 {
+    grid-area: 5/2;
+    display: flex;
+    justify-content: center;
+    background-color: white !important;
+    border: 2px white solid !important;
+}
+input, textarea {
+    border: 2px solid rgb(236,236,236);
+    border-radius: 5px;
+    height: 30px;
+}
+
+button {
+    padding: 5px;
+    background-color: rgb(246, 246, 246);
+    border: 2px solid rgb(236,236,236);
+    border-radius: 5px;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+footer {
+    border-top: solid 1px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.list p {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: large;
+    color: black;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+}
+.title, .price, .description, .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+.title {
+    grid-area: 1 / 2;
+}
+.price {
+    grid-area: 2/2;
+}
+.description {
+    grid-area: 3/2;
+}
+.edit-link {
+    grid-area: 3/3;
+    background-color: black;
+}
