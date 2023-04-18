@@ -1,0 +1,28 @@
+import {useState, useEffect} from 'react';
+
+const Form = (props) => {
+
+    const {transferedAuthorName} = props;
+    const {submitMethod, authorNameError} = props;
+    const [authorName, setAuthorName] = useState();
+
+
+    const submitHandler = e => {
+        e.preventDefault();
+        submitMethod({authorName});
+    }
+
+    return (       
+        <main>
+            <form onSubmit={submitHandler}>
+                <p>{authorNameError}</p>
+                <label>Author Name:</label>
+                <input type="text" name="authorName" value={authorName} onChange={(e) => setAuthorName(e.target.value)}></input>
+                <button>Create</button>
+            </form>
+
+        </main>
+    );
+
+}
+export default Form;
