@@ -1,12 +1,9 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 const Form = (props) => {
 
-    const {transferedAuthorName} = props;
     const {submitMethod, authorNameError} = props;
-    const [authorName, setAuthorName] = useState();
-
-
+    const [authorName, setAuthorName] = useState("");
     const submitHandler = e => {
         e.preventDefault();
         submitMethod({authorName});
@@ -20,7 +17,6 @@ const Form = (props) => {
                 <input type="text" name="authorName" value={authorName} onChange={(e) => setAuthorName(e.target.value)}></input>
                 <button>Create</button>
             </form>
-
         </main>
     );
 
