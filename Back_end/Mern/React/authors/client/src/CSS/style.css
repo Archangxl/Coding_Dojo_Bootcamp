@@ -2,30 +2,38 @@
 body {
     padding: 0px 20px;
     color: #191970;
+
 }
 
 nav {
     display: grid;
-    grid-template-columns: 2fr 1fr .75fr;
+    grid-template-columns: 2fr 1.5fr;
     grid-template-rows: 1fr;
+    min-width: 325px;
+}
+
+main {
+    min-width: 325px;
 }
 nav h1 {
     grid-area: 1 / 1;
-    font-size: xx-large;
-    opacity: 0.7;
+    font-size: clamp(14px, 20px, 26px);
 }
 nav div {
-    grid-area: 1 / 3;
+    grid-area: 1 / 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: large;
+}
+.HomeNav {
+    margin-right: 5px;
 }
 
 table {
     border: 2px solid #191970;
     border-collapse: collapse;
-    width: clamp(25%, 75%, 100%);
+    width: 300px;
+    max-width: 500px;
 }
 
 thead {
@@ -52,14 +60,42 @@ td {
 button {
     background-color: white;
     border: 2px solid #191970;
+    border-radius: 5px;
+}
+.linkElement, .nav {
+    text-decoration: none !important;
+    color: #191970 !important;
+    border: 2px solid #191970;
+    padding: 0px 5px;
+    border-radius: 5px;
 }
 
-button:hover {
+button:hover, .linkElement:hover, .nav:hover {
     background-color: #191970;
-    color: white;
+    color: white !important;
     cursor: pointer;
 }
 
-label, input {
-    margin-right: 10px;
+form {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: 2fr;
+    min-width: 150px;
+    max-width: 300px;
+}
+
+label {
+    grid-area: 1 / 1;
+    min-width: 100px;
+}
+input {
+    grid-area: 1 / 2;
+    min-width: 190px;
+    border-radius: 5px;
+}
+.submitButton {
+    grid-area: 2 / 2;
+    margin-top: 10px;
+    display: flex;
+    justify-content: end;
 }

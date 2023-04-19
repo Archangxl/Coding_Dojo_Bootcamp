@@ -35,7 +35,7 @@ const HomePage = (props) => {
                                 return (
                                     <tr key={index} >
                                         <td>{author.authorName}</td>
-                                        <td className="link"><Link to={'/' + author._id} ><span>Edit</span></Link></td>
+                                        <td className="link"><Link className="linkElement" to={'/' + author._id}>Edit</Link></td>
                                         <td><button onClick={(e)=> deleteAuthor(author._id)}>Delete</button></td>
                                     </tr>
                                 );

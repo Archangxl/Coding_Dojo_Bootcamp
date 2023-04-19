@@ -7,8 +7,8 @@ const Nav = () => {
         <nav>
             <h1>Favorite Authors</h1>
             <div>
-                <Link to={'/'}>Home</Link>
-                <Link to={'/create'}>Add an Author</Link>
+                <Link className="nav" to={'/'}>Home</Link>
+                <Link className="nav" to={'/create'}>Add an Author</Link>
             </div>
         </nav>
     );

@@ -6,6 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const UpdateAuthor = () => {
 
     const {id} = useParams();
+
     const [sendingAuthor, setSendingAuthor] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [authorNameError, setAuthorNameError] = useState();
@@ -17,6 +18,9 @@ const UpdateAuthor = () => {
             .then(res=>{
                 setSendingAuthor(res.data);
                 setLoaded(true);
+            })
+            .catch(err=>{
+                alert("We're sorry, but we could not find the author you are looking for. Would you like to add an author to our database? " + 'Here is a link to that page: http://localhost:3000/create');
             })
     }, [])
 
