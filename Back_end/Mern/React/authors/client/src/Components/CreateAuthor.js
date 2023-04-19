@@ -3,8 +3,7 @@ import Form from './Form';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const FormControl = () => {
-    const [authorName, setAuthorName] = useState([]);
+const CreateAuthor = () => {
     const [authorNameError, setAuthorNameError] = useState();
     const navigate = useNavigate();
 
@@ -27,4 +26,4 @@ const FormControl = () => {
     );
 
 }
-export default FormControl;
+export default CreateAuthor;

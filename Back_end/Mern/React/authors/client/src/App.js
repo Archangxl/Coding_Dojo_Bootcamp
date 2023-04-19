@@ -1,8 +1,9 @@
-import {BrowserRouter, Form, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Nav from './Components/Nav';
 import './CSS/style.css';
 import HomePage from './Components/HomePage';
-import FormControl from './Components/FormControl';
+import CreateAuthor from './Components/CreateAuthor';
+import UpdateAuthor from './Components/UpdateAuthor';
 
 function App() {
 
@@ -12,8 +13,8 @@ function App() {
       <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/create" element={<FormControl />}  />
-          <Route path="/:id" element={<FormControl />} />
+          <Route path="/create" element={<CreateAuthor />}  />
+          <Route path="/:id" element={ <UpdateAuthor />} />
         </Routes>
       </BrowserRouter>
     </>

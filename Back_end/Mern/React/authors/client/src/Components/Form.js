@@ -1,9 +1,10 @@
-import {useState} from 'react';
+import React,{useState} from 'react';
 
 const Form = (props) => {
 
-    const {submitMethod, authorNameError} = props;
-    const [authorName, setAuthorName] = useState("");
+    const {submitMethod, authorNameError, recievingAuthorName} = props;
+    const [authorName, setAuthorName] = useState(recievingAuthorName);
+
     const submitHandler = e => {
         e.preventDefault();
         submitMethod({authorName});

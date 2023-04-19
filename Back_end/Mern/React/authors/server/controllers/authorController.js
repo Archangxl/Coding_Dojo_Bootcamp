@@ -32,7 +32,7 @@ module.exports = {
     }, 
     
     updateAuthor: (req, res) => {
-        Author.findOneThenUpdate({_id: req.params.id}, req.body, {new:true, runValidatods: true})
+        Author.findOneAndUpdate({_id: req.params.id}, req.body, {new:true, runValidators:true})
             .then(updatedAuthor => {
                 res.status(200).json(updatedAuthor);
             })
