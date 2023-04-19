@@ -1,7 +1,7 @@
 import React ,{useEffect, useState} from 'react';
 import Form from './Form';
 import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
 const UpdateAuthor = () => {
 
@@ -10,6 +10,7 @@ const UpdateAuthor = () => {
     const [sendingAuthor, setSendingAuthor] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [authorNameError, setAuthorNameError] = useState();
+    const [userIdIsntInDatabase, setUserIdIsntInDatabase] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,9 +21,7 @@ const UpdateAuthor = () => {
                 setLoaded(true);
             })
             .catch(err=>{
-                alert("We're sorry, but we could not find the author you are looking for. Would you like to add an author to our database? " 
-                + 
-                'Here is a link to that page: http://localhost:3000/create');
+                setUserIdIsntInDatabase(true);
             })
     })
 
@@ -37,9 +36,14 @@ const UpdateAuthor = () => {
     }
 
     return (
-        <>
+        <>  
             {
-                loaded 
+                userIdIsntInDatabase !== false ? 
+                <>
+                    <p>We're sorry, but we could not find the author you are looking for.</p>
+                    <p>If you would like to add an author, please click "Add an Author" at the top right hand corner. </p>
+                </>
+                : loaded 
                 &&
                 <Form 
                     submitMethod={updateSubmit} 
