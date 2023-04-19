@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import DeleteButton from "./DeleteButton";
 
 const HomePage = (props) => {
 
@@ -11,13 +12,6 @@ const HomePage = (props) => {
             .then(res => setAuthors(res.data))
             .catch(err => console.log(err));
     })
-
-    const deleteAuthor = id => {
-        axios   
-            .delete('http://localhost:8000/api/deleteAuthor/'+id)
-            .then(res=>console.log(res))
-            .catch(err=>console.log(err));
-    }
     
     return (
         <>
@@ -36,7 +30,7 @@ const HomePage = (props) => {
                                     <tr key={index} >
                                         <td>{author.authorName}</td>
                                         <td className="link"><Link className="linkElement" to={'/' + author._id}>Edit</Link></td>
-                                        <td><button onClick={(e)=> deleteAuthor(author._id)}>Delete</button></td>
+                                        <td><DeleteButton id={author._id} /></td>
                                     </tr>
                                 );
                             })

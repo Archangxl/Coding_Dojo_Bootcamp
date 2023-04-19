@@ -32,8 +32,8 @@ nav div {
 table {
     border: 2px solid #191970;
     border-collapse: collapse;
-    width: 300px;
-    max-width: 500px;
+    min-width: 300px;
+;
 }
 
 thead {
@@ -97,5 +97,9 @@ input {
     grid-area: 2 / 2;
     margin-top: 10px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+}
+
+.formDelete {
+    margin-left: 10px;
 }

@@ -21,7 +21,7 @@ const CreateAuthor = () => {
 
     return (
         <>  
-            <Form submitMethod={createSubmit} authorNameError={authorNameError} />
+            <Form recievingAuthorName={""} submitMethod={createSubmit} authorNameError={authorNameError} />
         </> 
     );
 
