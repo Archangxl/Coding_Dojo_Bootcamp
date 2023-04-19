@@ -23,7 +23,7 @@ const UpdateAuthor = () => {
             .catch(err=>{
                 setUserIdIsntInDatabase(true);
             })
-    })
+    }, [])
 
     const updateSubmit = authorName => {
         axios
