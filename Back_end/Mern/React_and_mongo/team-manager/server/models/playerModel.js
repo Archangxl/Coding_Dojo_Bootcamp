@@ -11,8 +11,20 @@ const PlayerSchema = new mongoose.Schema({
         required: [true, 'Preferred Position is required!'],
         minLength: [2, 'Preferred Position must be 2 characters or more!']
     },
-    status: {
-        type: String
+    gameOne: {
+        type: String,
+        enum: ["Playing", "Not Playing", "Undecided"],
+        default: "Undecided"
+    }, 
+    gameTwo: {
+        type: String,
+        enum: ["Playing", "Not Playing", "Undecided"],
+        default: "Undecided"
+    }, 
+    gameThree: {
+        type: String,
+        enum: ["Playing", "Not Playing", "Undecided"],
+        default: "Undecided"
     }
 }, {timestamps: true} )
 

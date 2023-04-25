@@ -1,4 +1,4 @@
-import { BrowserRouter ,Routes, Route} from 'react-router-dom'
+import { BrowserRouter ,Routes, Route} from 'react-router-dom';
 import Form from './Components/Form';
 import AllProducts from './Components/AllProducts';
 import "../src/CSS/style.css"
