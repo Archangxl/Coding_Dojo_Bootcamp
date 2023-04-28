@@ -3,8 +3,7 @@ const Nav = () => {
     return (
         <>
             <nav>
-                <Link to="/players/list">Manage Players</Link>
-                <Link to="/status/game/1">Manage Player Status</Link>
+                <p><Link className='link' to="/players/list">Manage Players</Link> | <Link to="/status/game/1">Manage Player Status</Link></p>
             </nav>
         </>
     );

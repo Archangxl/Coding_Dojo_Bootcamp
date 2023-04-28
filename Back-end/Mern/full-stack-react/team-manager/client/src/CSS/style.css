@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+}
+
+nav {
+    background-color: #00a0fe;
+    padding: 10px;
+}
+
+a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+header a {
+    color: black !important;
+}
+
+main, header {
+    padding: 10px 0px;
+}
+
+.width-container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
+}
+
+form {
+    border: 1px solid black;
+    padding: 10px;
+}

@@ -18,14 +18,15 @@ const Form = () => {
                 navigate('/players/list')
             })
             .catch(err => {
-                if (err.response.data.errors.playerName !== null) {
+                if (err.response.data.errors.playerName !== undefined) {
                     setPlayerNameErrors(err.response.data.errors.playerName.message);
-                    if (err.response.data.errors.preferredPosition !== null) {
-                        setPreferredPositionErrors(err.response.data.errors.preferredPosition.message);
-                    }
+                } else {
+                    setPlayerNameErrors(undefined);
                 }
-                else if (err.response.data.errors.preferredPosition !== null) {
+                if (err.response.data.errors.preferredPosition !== undefined) {
                     setPreferredPositionErrors(err.response.data.errors.preferredPosition.message);
+                } else {
+                    setPreferredPositionErrors(undefined);
                 }
             });
     }
@@ -33,22 +34,25 @@ const Form = () => {
     return (
         <>
             <header>
-                <Link to="/players/list">List</Link>
-                <Link to="/players/addPlayers">Add Player</Link>
+                <div className="width-container">
+                    <p><Link to="/players/list">List</Link> | <Link to="/players/addPlayers">Add Player</Link></p>
+                </div>
             </header>
 
             <main>
-                <form onSubmit={formSubmitition}>
-                    <p>{playerNameErrors}</p>
-                    <label>Player Name: </label>
-                    <input type="text" onChange={(e) => setPlayerName(e.target.value)}></input>
+                <div className="width-container">
+                    <form onSubmit={formSubmitition}>
+                        <p>{playerNameErrors}</p>
+                        <label>Player Name: </label>
+                        <input type="text" onChange={(e) => setPlayerName(e.target.value)}></input>
 
-                    <p>{preferredPositionErrors}</p>
-                    <label>Preferred Position: </label>
-                    <input type="text" onChange={(e) => setPreferredPosition(e.target.value)}></input>
+                        <p>{preferredPositionErrors}</p>
+                        <label>Preferred Position: </label>
+                        <input type="text" onChange={(e) => setPreferredPosition(e.target.value)}></input>
 
-                    <button>Add</button>
-                </form>
+                        <button>Add</button>
+                    </form>
+                </div>
             </main>
         </>
     );

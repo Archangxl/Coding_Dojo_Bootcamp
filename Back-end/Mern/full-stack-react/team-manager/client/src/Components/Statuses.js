@@ -34,15 +34,18 @@ const Statuses = () => {
     return (
         <>
             <header>
-                <h1>Player Status - Game {id}</h1>
-                <p><Link to="/status/game/1">Game 1</Link> | <Link to="/status/game/2">Game 2</Link> | <Link to="/status/game/3">Game 3</Link></p>
+                <div className="width-container">
+                    <h1>Player Status - Game {id}</h1>
+                    <p><Link to="/status/game/1">Game 1</Link> | <Link to="/status/game/2">Game 2</Link> | <Link to="/status/game/3">Game 3</Link></p>
+                </div>
             </header>
 
             <main>
-                <table>
+                <div className="width-container">
+                    <table>
                         <thead>
                             <tr>
-                                <th>Players</th>
+                                <th>Player Name</th>
                                 <th>Statuses</th>
                             </tr>
                         </thead>
@@ -147,8 +150,9 @@ const Statuses = () => {
                     }
                 </> 
                 }   
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </>
     );

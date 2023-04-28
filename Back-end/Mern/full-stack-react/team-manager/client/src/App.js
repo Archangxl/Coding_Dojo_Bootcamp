@@ -3,6 +3,7 @@ import Nav from './Components/Nav';
 import List from './Components/List';
 import Statuses from './Components/Statuses';
 import Form from './Components/Form';
+import './CSS/style.css';
 
 function App() {
     return (

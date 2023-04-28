@@ -22,33 +22,36 @@ const List = () => {
     return (
         <>
         <header>
-            <p><Link to="/players/list">List</Link> | <Link to="/players/addPlayers">Add Player</Link></p>
+            <div className="width-container">
+                <p><Link to="/players/list">List</Link> | <Link to="/players/addPlayers">Add Player</Link></p>
+            </div>
         </header>
 
         <main>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player Name</th>
-                        <th>Preffered Position</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        allPlayers.map((player, index) => {
-                            return (
-                                <tr key={index}>
-                                    <td>{player.playerName}</td>
-                                    <td>{player.preferredPosition}</td>
-                                    <td><button onClick={(e) => deletePlayer(player._id)} >Delete</button></td>
-                                </tr>
-                            );
-                        })
-                    }
-                </tbody>
-            </table>
+            <div className="width-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Player Name</th>
+                            <th>Preffered Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            allPlayers.map((player, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{player.playerName}</td>
+                                        <td>{player.preferredPosition}</td>
+                                        <td><button onClick={(e) => deletePlayer(player._id)} >Delete</button></td>
+                                    </tr>
+                                );
+                            })
+                        }
+                    </tbody>
+                </table>
+            </div>
 
         </main>
         
